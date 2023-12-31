@@ -3,8 +3,8 @@ import "firebase/auth";
 import "firebase/firestore";
 import "firebase/functions";
 import "firebase/messaging";
-import "firebase/storage";
 import "firebase/performance";
+import "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBJxMr9h_iiy3fsAPbatfGzPXU9t0wHhpU",
@@ -16,9 +16,5 @@ const firebaseConfig = {
   measurementId: "G-QYQPMRN9ZN"
 };
 
-firebase.initializeApp(firebaseConfig);
-
-firebase.performance();
-firebase.auth().signInAnonymously();
 
 export default firebase;
