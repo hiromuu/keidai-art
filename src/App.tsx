@@ -4,8 +4,6 @@ function App() {
     const containerStyle: React.CSSProperties = {
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
         fontFamily: 'MidashiGoPr5 MB31-83pv-RKSJ-H*'
     };
 
@@ -30,8 +28,9 @@ function App() {
         padding: '20px',
         fontSize: `1.7vw`,
         marginTop: '5%',
-        marginLeft: '-20%',
+        marginLeft: '10%',
         lineHeight: '1.8',
+        marginBottom: `0px`,
     };
     // メイン画像のスタイル
     const mainStyle: React.CSSProperties = {
@@ -88,8 +87,86 @@ function App() {
     const h1Style: React.CSSProperties = {
         textAlign: 'left',
         color: 'white',
-        marginRight: '50%',
-        fontSize: `3Vw`
+        marginLeft: '10%',
+        fontSize: `3Vw`,
+        boxSizing: 'border-box',
+    };
+    const textBosyu: React.CSSProperties = {
+        textAlign: 'left',
+        color: 'white',
+        fontSize: `1.9vw`,
+        marginLeft: '10%',
+        boxSizing: 'border-box',
+        fontWeight: 'bold'
+    };
+
+    const rectangleContainerStyle: React.CSSProperties = {
+        display: 'flex',
+        justifyContent: 'space-between',
+        width: '80%',
+        marginTop: '20px',
+        marginLeft: '10%',
+        position: 'relative',
+    };
+
+    const rectangleStyle: React.CSSProperties = {
+        width: '32%',
+        height: '70Vh',
+        border: 'solid',
+        borderColor: 'white',
+    };
+    const boxTitle: React.CSSProperties = {
+        color: 'white',
+        fontSize: '1.5Vw',
+        fontWeight: 'bold',
+        marginLeft: '9%',
+        marginBottom: '2%'
+    }
+
+    const boxText: React.CSSProperties = {
+        fontSize: '1vw',
+        color: 'rgb(234, 96, 142)',
+        textAlign: 'center',
+        margin: '0',
+    }
+    const spanningRectangleStyle: React.CSSProperties = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'absolute',
+        width: '80%',
+        height: '15px',
+        backgroundColor: 'white',
+        top: '12vh',
+        left: '18%',
+        transform: 'translateY(-50%)',
+    };
+
+    const buttonContainerStyle: React.CSSProperties = {
+        display: 'flex',
+        justifyContent: 'space-between',
+        width: '80%',
+        marginTop: '20px',
+        marginLeft: '10%',
+    };
+
+    const buttonStyle: React.CSSProperties = {
+        width: '49%',
+        padding: '10px 20px',
+        backgroundColor: 'white',
+        color: 'rgb(234, 96, 142)',
+        border: 'none',
+        cursor: 'pointer',
+    };
+
+    const textChyui: React.CSSProperties = {
+        textAlign: 'left',
+        color: 'white',
+        fontSize: `0.8vw`,
+        marginTop: '5%',
+        marginLeft: '10%',
+        boxSizing: 'border-box',
+        fontWeight: 'bold'
     };
 
     return (
@@ -134,7 +211,46 @@ function App() {
                     1日限りの不思議な縁日へようこそ。<br />
                 </p>
                 <h1 style={h1Style}>出展者募集</h1>
-                <p style={textStyle}><span style={{ fontWeight: "bold" }}>募集期間　　1月11日（水）～2月11日（土）</span></p>
+                <p style={textBosyu}>募集期間　　1月11日（水）～2月11日（土）</p>
+                <div style={rectangleContainerStyle}>
+                    <div style={rectangleStyle}>
+                        <p style={boxTitle}>抽選あり（応募多数の場合）</p>
+                        <div style={{
+                            border: "solid",
+                            width: '40%',
+                            height: '30%',
+                            marginLeft: '9%',
+                            marginTop: '4%',
+                            borderColor: 'white'
+                        }}></div>
+                    </div>
+                    <div style={rectangleStyle}>
+                        <p style={boxTitle}>選考あり（2月22日以降確定）</p>
+                    </div>
+                    <div style={rectangleStyle}>
+                        <p style={boxTitle}>先着</p>
+                    </div>
+                    <div style={spanningRectangleStyle}>
+                        <p style={boxText}>ブースあり</p>
+                    </div>
+                </div>
+                <div style={buttonContainerStyle}>
+                    <button style={buttonStyle}>ボタン1</button>
+                    <button style={buttonStyle}>ボタン2</button>
+                </div>
+                <p style={textChyui}>
+                    パフォーマンス・アート・飲食・短編映画は、全体のバランス調整のため選考となります。<br />
+                    結果は、2月22日以降にお知らせします。<br />
+                    <br />
+                    短編映画は、FilmFreewayより募集します。<br />
+                    こちらからお申し込みください。<br />
+                    <br />
+                    古本・クラフト・ワークショップは、先着順となりますので定員に達し次第、締め切ります。<br />
+                    <br />
+                    パフォーマンスにはブースがございません。<br />
+                    <br />
+                    アートブースのサイズは要相談。飲食には 6m×6m以内、それ以外には 3m×3m以内のブースをご用意します。<br />
+                </p>
             </div>
 
         </React.Fragment>
