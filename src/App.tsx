@@ -111,7 +111,7 @@ function App() {
 
     const rectangleStyle: React.CSSProperties = {
         width: '32%',
-        height: '70Vh',
+        height: '90Vh',
         border: 'solid',
         borderColor: 'white',
     };
@@ -119,7 +119,7 @@ function App() {
         color: 'white',
         fontSize: '1.5Vw',
         fontWeight: 'bold',
-        marginLeft: '9%',
+        marginLeft: '6%',
         marginBottom: '2%'
     }
 
@@ -129,6 +129,14 @@ function App() {
         textAlign: 'center',
         margin: '0',
     }
+
+    const boxText2: React.CSSProperties = {
+        fontSize: '1vw',
+        color: 'white',
+        textAlign: 'center',
+
+    }
+
     const spanningRectangleStyle: React.CSSProperties = {
         display: 'flex',
         alignItems: 'center',
@@ -137,9 +145,49 @@ function App() {
         width: '80%',
         height: '15px',
         backgroundColor: 'white',
-        top: '12vh',
-        left: '18%',
+        top: '5.3vw',
+        left: '17.8%',
         transform: 'translateY(-50%)',
+    };
+
+    const noBoothBoxStyle: React.CSSProperties = {
+        border: "solid",
+        width: '40%',
+        height: '12vh',//後ほど修正
+        marginLeft: '6%',
+        borderColor: 'white',
+        alignItems: 'center',
+        justifyContent: 'center',
+        display: 'flex',
+    };
+
+    const noBoothBoxStyle2: React.CSSProperties = {
+        border: "solid",
+        width: '40%',
+        height: '6vh',
+        marginTop: '6vh',
+        borderColor: 'white',
+        alignItems: 'center',
+        justifyContent: 'center',
+        display: 'flex',
+    };
+
+    const noBoothBoxStyle3: React.CSSProperties = {
+        border: "solid",
+        width: '40%',
+        height: '6vh',//後ほど修正
+        marginTop: '6vh',
+        borderColor: 'white',
+        alignItems: 'center',
+        justifyContent: 'center',
+        display: 'flex',
+        marginLeft: '6%',
+    };
+
+    const boothOptionsContainer: React.CSSProperties = {
+        display: 'flex',
+        justifyContent: 'space-between',
+        width: '100%',
     };
 
     const buttonContainerStyle: React.CSSProperties = {
@@ -215,17 +263,24 @@ function App() {
                 <div style={rectangleContainerStyle}>
                     <div style={rectangleStyle}>
                         <p style={boxTitle}>抽選あり（応募多数の場合）</p>
-                        <div style={{
-                            border: "solid",
-                            width: '40%',
-                            height: '30%',
-                            marginLeft: '9%',
-                            marginTop: '4%',
-                            borderColor: 'white'
-                        }}></div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle}>
+                                <p style={boxText2}>ブースなし</p>
+                            </div>
+                            <div style={noBoothBoxStyle2}>
+                                <p style={boxText2}>要相談</p>
+                            </div>
+                        </div>
                     </div>
                     <div style={rectangleStyle}>
                         <p style={boxTitle}>選考あり（2月22日以降確定）</p>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle3}>
+                                <p style={boxText2}>要相談</p>
+                            </div>
+                            <div>
+                            </div>
+                        </div>
                     </div>
                     <div style={rectangleStyle}>
                         <p style={boxTitle}>先着</p>
@@ -233,6 +288,7 @@ function App() {
                     <div style={spanningRectangleStyle}>
                         <p style={boxText}>ブースあり</p>
                     </div>
+
                 </div>
                 <div style={buttonContainerStyle}>
                     <button style={buttonStyle}>ボタン1</button>
