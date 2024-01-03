@@ -142,18 +142,34 @@ function App() {
         alignItems: 'center',
         justifyContent: 'center',
         position: 'absolute',
-        width: '80%',
+        width: '80.5%',
         height: '15px',
         backgroundColor: 'white',
         top: '5.3vw',
-        left: '17.8%',
+        left: '17%',
         transform: 'translateY(-50%)',
+        border: 'solid',
+        borderColor: 'transparent',
+    };
+
+    const spanningRectangleStyle2: React.CSSProperties = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'absolute',
+        width: '46.5%',
+        height: '6vh',
+        backgroundColor: 'white',
+        top: '15.8vh',
+        left: '51%',
+        border: 'solid',
+        borderColor: 'transparent',
     };
 
     const noBoothBoxStyle: React.CSSProperties = {
         border: "solid",
         width: '40%',
-        height: '12vh',//後ほど修正
+        height: '12vh',
         marginLeft: '6%',
         borderColor: 'white',
         alignItems: 'center',
@@ -166,6 +182,7 @@ function App() {
         width: '40%',
         height: '6vh',
         marginTop: '6vh',
+        marginRight: '6%',
         borderColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
@@ -175,9 +192,60 @@ function App() {
     const noBoothBoxStyle3: React.CSSProperties = {
         border: "solid",
         width: '40%',
-        height: '6vh',//後ほど修正
+        height: '6vh',
         marginTop: '6vh',
         borderColor: 'white',
+        alignItems: 'center',
+        justifyContent: 'center',
+        display: 'flex',
+        marginLeft: '6%',
+    };
+
+    const noBoothBoxStyle4: React.CSSProperties = {
+        width: '40%',
+        height: '6vh',
+        marginTop: '6vh',
+        alignItems: 'center',
+        justifyContent: 'center',
+        display: 'flex',
+        border: 'solid',
+        borderColor: 'transparent',
+    };
+
+    const noBoothBoxStyle5: React.CSSProperties = {
+        width: '40%',
+        height: '12vh',
+        marginTop: '2vh',
+        marginLeft: '6%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        display: 'flex',
+        background: 'white',
+        color: 'rgb(234, 96, 142)',
+        border: 'solid',
+        borderColor: 'transparent',
+    };
+
+    const noBoothBoxStyle6: React.CSSProperties = {
+        width: '40%',
+        height: '12vh',
+        marginTop: '2vh',
+        marginRight: '6%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        display: 'flex',
+        background: 'white',
+        color: 'rgb(234, 96, 142)',
+        border: 'solid',
+        borderColor: 'transparent',
+    };
+
+    const noBoothBoxStyle7: React.CSSProperties = {
+        border: 'solid',
+        borderColor: 'transparent',
+        width: '40%',
+        height: '6vh',
+        marginTop: '6vh',
         alignItems: 'center',
         justifyContent: 'center',
         display: 'flex',
@@ -271,22 +339,56 @@ function App() {
                                 <p style={boxText2}>要相談</p>
                             </div>
                         </div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle5}>
+                                <p style={boxText}>パフォーマンス</p>
+                            </div>
+                            <div style={noBoothBoxStyle6}>
+                                <p style={boxText}>アート</p>
+                            </div>
+                        </div>
                     </div>
                     <div style={rectangleStyle}>
                         <p style={boxTitle}>選考あり（2月22日以降確定）</p>
                         <div style={boothOptionsContainer}>
                             <div style={noBoothBoxStyle3}>
-                                <p style={boxText2}>要相談</p>
+                                <p style={boxText2}>6m×6m</p>
                             </div>
-                            <div>
+                            <div style={noBoothBoxStyle4}>
+                            </div>
+                        </div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle5}>
+                                <p style={boxText}>飲食</p>
+                            </div>
+                            <div style={noBoothBoxStyle6}>
+                                <p style={boxText}>短編映画</p>
                             </div>
                         </div>
                     </div>
                     <div style={rectangleStyle}>
                         <p style={boxTitle}>先着</p>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle7}>
+                            </div>
+                            <div style={noBoothBoxStyle4}>
+                            </div>
+                        </div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle5}>
+                                <p style={boxText}>クラフト<br />
+                                    ワークショップ</p>
+                            </div>
+                            <div style={noBoothBoxStyle6}>
+                                <p style={boxText}>一箱古本</p>
+                            </div>
+                        </div>
                     </div>
                     <div style={spanningRectangleStyle}>
                         <p style={boxText}>ブースあり</p>
+                    </div>
+                    <div style={spanningRectangleStyle2}>
+                        <p style={boxText}>3m×3m以内</p>
                     </div>
 
                 </div>
