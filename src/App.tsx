@@ -245,12 +245,60 @@ function App() {
         borderColor: 'transparent',
         width: '40%',
         height: '6vh',
-        marginTop: '6vh',
+        marginTop: '3vh',
         alignItems: 'center',
         justifyContent: 'center',
         display: 'flex',
         marginLeft: '6%',
     };
+
+    const noBoothBoxStyle8: React.CSSProperties = {
+        border: 'solid',
+        borderColor: 'transparent',
+        width: '40%',
+        height: '6vh',
+        marginTop: '3vh',
+        alignItems: 'center',
+        justifyContent: 'center',
+        display: 'flex',
+        marginRight: '6%',
+    };
+    const noBoothBoxStyle9: React.CSSProperties = {
+        border: 'solid',
+        borderColor: 'transparent',
+        width: '40%',
+        height: '6vh',
+        marginTop: '3vh',
+        alignItems: 'center',
+        justifyContent: 'left',
+        display: 'flex',
+        marginLeft: '6%',
+    };
+
+    const noBoothBoxStyle10: React.CSSProperties = {
+        border: 'solid',
+        borderColor: 'transparent',
+        width: '40%',
+        height: '6vh',
+        marginTop: '3vh',
+        alignItems: 'center',
+        justifyContent: 'left',
+        display: 'flex',
+        marginRight: '6%',
+    };
+
+    const bothTextPrice: React.CSSProperties = {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: '5vh',
+    }
+
+    const bothText: React.CSSProperties = {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: '2vh',
+        textAlign: 'left',
+    }
 
     const boothOptionsContainer: React.CSSProperties = {
         display: 'flex',
@@ -273,6 +321,7 @@ function App() {
         color: 'rgb(234, 96, 142)',
         border: 'none',
         cursor: 'pointer',
+        fontSize: '1.5vw',
     };
 
     const textChyui: React.CSSProperties = {
@@ -347,6 +396,56 @@ function App() {
                                 <p style={boxText}>アート</p>
                             </div>
                         </div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle7}>
+                                <p style={bothTextPrice}>￥0</p>
+                            </div>
+                            <div style={noBoothBoxStyle8}>
+                                <p style={bothTextPrice}>￥0</p>
+                            </div>
+                        </div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle7}>
+                                <p style={bothTextPrice}>5組</p>
+                            </div>
+                            <div style={noBoothBoxStyle8}>
+                                <p style={bothTextPrice}>20組</p>
+                            </div>
+                        </div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle9}>
+                                <p style={bothText}>
+                                    ・大道芸、楽器隊など
+                                </p>
+                            </div>
+                            <div style={noBoothBoxStyle10}>
+                                <p style={bothText}>
+                                    ・絵画、書、オブジェ、インスタレーションなど
+                                </p>
+                            </div>
+                        </div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle9}>
+                                <p style={bothText}>
+                                    ・移動しながらできる等
+                                    空間占有をしないもの
+                                </p>
+                            </div>
+                            <div style={noBoothBoxStyle10}>
+                                <p style={bothText}>
+                                    ・当日の販売を伴わない、販売交渉可能
+                                </p>
+                            </div>
+                        </div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle9}>
+                                <p style={bothText}>
+                                    ・投げ銭OK
+                                </p>
+                            </div>
+                            <div style={noBoothBoxStyle10}>
+                            </div>
+                        </div>
                     </div>
                     <div style={rectangleStyle}>
                         <p style={boxTitle}>選考あり（2月22日以降確定）</p>
@@ -363,6 +462,43 @@ function App() {
                             </div>
                             <div style={noBoothBoxStyle6}>
                                 <p style={boxText}>短編映画</p>
+                            </div>
+                        </div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle7}>
+                                <p style={bothTextPrice}>￥7,000</p>
+                            </div>
+                            <div style={noBoothBoxStyle8}>
+                                <p style={bothTextPrice}>￥1,000</p>
+                            </div>
+                        </div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle7}>
+                                <p style={bothTextPrice}>30組</p>
+                            </div>
+                            <div style={noBoothBoxStyle8}>
+                                <p style={bothTextPrice}>5組</p>
+                            </div>
+                        </div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle9}>
+                                <p style={bothText}>
+                                    ・食事類、弁当、パン、菓子、コーヒー、加工品など
+                                </p>
+                            </div>
+                            <div style={noBoothBoxStyle10}>
+                                <p style={bothText}>
+                                    ・30分以内の短編
+                                </p>
+                            </div>
+                        </div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle7}>
+                            </div>
+                            <div style={noBoothBoxStyle8}>
+                                <p style={bothText}>
+                                    ・Film Freewayより別途募集
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -383,6 +519,46 @@ function App() {
                                 <p style={boxText}>一箱古本</p>
                             </div>
                         </div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle7}>
+                                <p style={bothTextPrice}>￥4,000</p>
+                            </div>
+                            <div style={noBoothBoxStyle8}>
+                                <p style={bothTextPrice}>￥1,000</p>
+                            </div>
+                        </div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle7}>
+                                <p style={bothTextPrice}>90組</p>
+                            </div>
+                            <div style={noBoothBoxStyle8}>
+                                <p style={bothTextPrice}>10組</p>
+                            </div>
+                        </div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle9}>
+                                <p style={bothText}>
+                                    ・工芸、木工、革製品、衣、似顔絵、アクセサリー、花、マッサージなど
+                                </p>
+                            </div>
+                            <div style={noBoothBoxStyle10}>
+                                <p style={bothText}>
+                                    ・絵本、一般書、雑誌、CDなど
+                                </p>
+                            </div>
+                        </div>
+                        <div style={boothOptionsContainer}>
+                            <div style={noBoothBoxStyle9}>
+                                <p style={bothText}>
+                                    ・参加費徴収ワークショップ含む
+                                </p>
+                            </div>
+                            <div style={noBoothBoxStyle10}>
+                                <p style={bothText}>
+                                    ・リンゴ箱程度のサイズ1箱
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <div style={spanningRectangleStyle}>
                         <p style={boxText}>ブースあり</p>
@@ -393,8 +569,8 @@ function App() {
 
                 </div>
                 <div style={buttonContainerStyle}>
-                    <button style={buttonStyle}>ボタン1</button>
-                    <button style={buttonStyle}>ボタン2</button>
+                    <button style={buttonStyle}>出店の応募はこちら</button>
+                    <button style={buttonStyle}>短編映画祭の応募はこちら</button>
                 </div>
                 <p style={textChyui}>
                     パフォーマンス・アート・飲食・短編映画は、全体のバランス調整のため選考となります。<br />
