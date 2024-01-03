@@ -269,7 +269,7 @@ function App() {
         width: '40%',
         height: '6vh',
         marginTop: '3vh',
-        alignItems: 'center',
+        alignItems: 'start',
         justifyContent: 'left',
         display: 'flex',
         marginLeft: '6%',
@@ -281,7 +281,7 @@ function App() {
         width: '40%',
         height: '6vh',
         marginTop: '3vh',
-        alignItems: 'center',
+        alignItems: 'start',
         justifyContent: 'left',
         display: 'flex',
         marginRight: '6%',
@@ -333,6 +333,27 @@ function App() {
         boxSizing: 'border-box',
         fontWeight: 'bold'
     };
+    const fotterStyle: React.CSSProperties = {
+        display: 'flex',
+        justifyContent: 'space-between',
+        width: '85%',
+        marginTop: '20px',
+        marginBottom: '7%',
+        alignItems: 'end',
+        marginLeft: '5%',
+        marginRight: '10%',
+    }
+
+    const textKouen: React.CSSProperties = {
+        textAlign: 'left',
+        color: 'white',
+        fontSize: `0.8vw`,
+        boxSizing: 'border-box',
+        fontWeight: 'bold'
+    };
+    const fotterImageStyle: React.CSSProperties = {
+        width: '15%',
+    }
 
     return (
         <React.Fragment>
@@ -585,6 +606,14 @@ function App() {
                     <br />
                     アートブースのサイズは要相談。飲食には 6m×6m以内、それ以外には 3m×3m以内のブースをご用意します。<br />
                 </p>
+                <div style={fotterStyle}>
+                    <p style={textKouen}>
+                        主催：玄照寺奉賛会、境内アート×苗市実行委員会<br />
+                        後援：小布施町、小布施町教育委員会、小布施文化観光協会、小布施町商工会、大島自治会
+                    </p>
+                    <img src="/images/footer_pic.png" alt="Main Pic" style={fotterImageStyle} />
+                </div>
+
             </div>
 
         </React.Fragment>
