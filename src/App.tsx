@@ -72,8 +72,8 @@ function App() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        width: '150px',
-        height: '150px',
+        width: '15vw',
+        height: '15vw',
         borderRadius: '50%',
         backgroundColor: 'white',
         color: 'rgb(234, 96, 142)',
@@ -290,13 +290,13 @@ function App() {
     const bothTextPrice: React.CSSProperties = {
         color: 'white',
         fontWeight: 'bold',
-        fontSize: '5vh',
+        fontSize: '2.5vw',
     }
 
     const bothText: React.CSSProperties = {
         color: 'white',
         fontWeight: 'bold',
-        fontSize: '2vh',
+        fontSize: '0.9vw',
         textAlign: 'left',
     }
 
@@ -378,8 +378,9 @@ function App() {
                     <img src="/images/day.svg" alt="Day" style={{ ...dayStyle, ...additionalImageStyle }} />
                     <img src="/images/copy.svg" alt="Copy" style={{ ...copyStyle, ...additionalImageStyle }} />
                     <div style={{ ...circleStyle, ...additionalImageStyle }}>
-                        ゲスト<br />
-                        comming soon
+                        <p style={{ fontSize: "2vw" }}>
+                            ゲスト<br />
+                            comming soon</p>
                     </div>
                 </div>
 
