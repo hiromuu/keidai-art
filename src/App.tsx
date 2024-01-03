@@ -17,6 +17,15 @@ function App() {
         alignItems: 'center',
         justifyContent: 'center',
     };
+    const imageContainerStylemobile: React.CSSProperties = {
+        position: 'relative',
+        width: '100%',
+        height: `70%`,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+    };
 
     // メイン画像以外の画像のスタイルを調整
     const additionalImageStyle: React.CSSProperties = {
@@ -70,12 +79,30 @@ function App() {
         left: '50%',
     };
 
+    const dayStylemobile: React.CSSProperties = {
+        width: '25%',
+        height: 'auto',
+        zIndex: 1,
+        alignSelf: 'flex-start',
+        top: '110%',
+        left: '15%',
+    };
+
     const copyStyle: React.CSSProperties = {
         height: '125Vh',
         width: '20Vw',
         zIndex: 1,
         alignSelf: 'flex-end', // 親コンテナの終端に配置
         margin: '0 5vw',
+    };
+
+    const copyStylemobile: React.CSSProperties = {
+        height: '33Vh',
+        width: '30Vw',
+        zIndex: 1,
+        alignSelf: 'flex-end', // 親コンテナの終端に配置
+        marginTop: '14vh',
+        marginRight: '1vw'
     };
 
     const circleStyle: React.CSSProperties = {
@@ -94,6 +121,24 @@ function App() {
         top: '90%',
         right: '15%',
     };
+    const circleStylemobile: React.CSSProperties = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '20vw',
+        height: '20vw',
+        borderRadius: '50%',
+        backgroundColor: 'white',
+        color: 'rgb(234, 96, 142)',
+        fontSize: '20px',
+        textAlign: 'center',
+        lineHeight: '30px',
+        alignSelf: 'flex-end',
+        top: '90%',
+        right: '25%',
+    };
+
+
     const h1Style: React.CSSProperties = {
         textAlign: 'left',
         color: 'white',
@@ -382,21 +427,65 @@ function App() {
     `}
             </style>
             <div style={containerStyle}>
-                <div style={imageContainerStyle}>
+                {isWide ? <div style={imageContainerStyle}>
                     <img src="/images/main_pic.png" alt="Main Pic" style={mainStyle} />
                     {isWide ?
                         <img src="/images/logo.svg" alt="Logo" style={{ ...logoStyle, ...additionalImageStyle }} className="logo" />
                         : <img src="/images/logo.svg" alt="Logo" style={{ ...logoStylemobile, ...additionalImageStyle }} className="logo" />}
+                    {isWide ?
+                        <img src="/images/day.svg" alt="Day" style={{ ...dayStyle, ...additionalImageStyle }} />
+                        :
+                        <img src="/images/day.svg" alt="Day" style={{ ...dayStylemobile, ...additionalImageStyle }} />
+                    }
+                    {isWide ?
+                        <img src="/images/copy.svg" alt="Copy" style={{ ...copyStyle, ...additionalImageStyle }} />
+                        :
+                        <img src="/images/copy.svg" alt="Copy" style={{ ...copyStylemobile, ...additionalImageStyle }} />
+                    }
+                    {isWide ?
+                        <div style={{ ...circleStyle, ...additionalImageStyle }}>
+                            <p style={{ fontSize: "2vw" }}>
+                                ゲスト<br />
+                                comming soon</p>
+                        </div>
+                        :
+                        <div style={{ ...circleStylemobile, ...additionalImageStyle }}>
+                            <p style={{ fontSize: "10px", lineHeight: "1.2" }}>
+                                ゲスト<br />
+                                comming soon</p>
+                        </div>}
 
-                    <img src="/images/day.svg" alt="Day" style={{ ...dayStyle, ...additionalImageStyle }} />
-                    <img src="/images/copy.svg" alt="Copy" style={{ ...copyStyle, ...additionalImageStyle }} />
-                    <div style={{ ...circleStyle, ...additionalImageStyle }}>
-                        <p style={{ fontSize: "2vw" }}>
-                            ゲスト<br />
-                            comming soon</p>
-                    </div>
                 </div>
+                    :
+                    <div style={imageContainerStylemobile}>
+                        <img src="/images/main_pic.png" alt="Main Pic" style={mainStyle} />
+                        {isWide ?
+                            <img src="/images/logo.svg" alt="Logo" style={{ ...logoStyle, ...additionalImageStyle }} className="logo" />
+                            : <img src="/images/logo.svg" alt="Logo" style={{ ...logoStylemobile, ...additionalImageStyle }} className="logo" />}
+                        {isWide ?
+                            <img src="/images/day.svg" alt="Day" style={{ ...dayStyle, ...additionalImageStyle }} />
+                            :
+                            <img src="/images/day.svg" alt="Day" style={{ ...dayStylemobile, ...additionalImageStyle }} />
+                        }
+                        {isWide ?
+                            <img src="/images/copy.svg" alt="Copy" style={{ ...copyStyle, ...additionalImageStyle }} />
+                            :
+                            <img src="/images/copy.svg" alt="Copy" style={{ ...copyStylemobile, ...additionalImageStyle }} />
+                        }
+                        {isWide ?
+                            <div style={{ ...circleStyle, ...additionalImageStyle }}>
+                                <p style={{ fontSize: "2vw" }}>
+                                    ゲスト<br />
+                                    comming soon</p>
+                            </div>
+                            :
+                            <div style={{ ...circleStylemobile, ...additionalImageStyle }}>
+                                <p style={{ fontSize: "10px", lineHeight: "1.2" }}>
+                                    ゲスト<br />
+                                    comming soon</p>
+                            </div>}
 
+                    </div>}
                 <p style={textStyle}>
                     桜吹雪に誘われてたどりつくのは、<br />
                     境内に広がる見たことのない景色。<br />
