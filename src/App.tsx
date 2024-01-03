@@ -1,4 +1,5 @@
 import React from 'react';
+import useMedia from "use-media";
 
 function App() {
     const containerStyle: React.CSSProperties = {
@@ -6,6 +7,7 @@ function App() {
         flexDirection: 'column',
         fontFamily: 'MidashiGoPr5 MB31-83pv-RKSJ-H*'
     };
+    const isWide = useMedia({ minWidth: "1000px" });
 
     const imageContainerStyle: React.CSSProperties = {
         position: 'relative',
@@ -49,6 +51,14 @@ function App() {
         alignSelf: 'flex-start', // 左端に配置
         top: '75%',
         left: '15%',
+    };
+    const logoStylemobile: React.CSSProperties = {
+        width: '50%',
+        height: 'auto',
+        zIndex: 1,
+        alignSelf: 'flex-start', // 左端に配置
+        top: '65%',
+        left: '10%',
     };
 
     const dayStyle: React.CSSProperties = {
@@ -374,7 +384,10 @@ function App() {
             <div style={containerStyle}>
                 <div style={imageContainerStyle}>
                     <img src="/images/main_pic.png" alt="Main Pic" style={mainStyle} />
-                    <img src="/images/logo.svg" alt="Logo" style={{ ...logoStyle, ...additionalImageStyle }} />
+                    {isWide ?
+                        <img src="/images/logo.svg" alt="Logo" style={{ ...logoStyle, ...additionalImageStyle }} className="logo" />
+                        : <img src="/images/logo.svg" alt="Logo" style={{ ...logoStylemobile, ...additionalImageStyle }} className="logo" />}
+
                     <img src="/images/day.svg" alt="Day" style={{ ...dayStyle, ...additionalImageStyle }} />
                     <img src="/images/copy.svg" alt="Copy" style={{ ...copyStyle, ...additionalImageStyle }} />
                     <div style={{ ...circleStyle, ...additionalImageStyle }}>
