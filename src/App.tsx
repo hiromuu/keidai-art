@@ -1,5 +1,4 @@
-import mediumZoom from 'medium-zoom';
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import useMedia from 'use-media';
 
 function App() {
@@ -43,15 +42,6 @@ function App() {
         marginLeft: '15%',
     };
 
-    const textStylemobile: React.CSSProperties = {
-        textAlign: 'left',
-        color: 'white',
-        fontSize: `3vw`,
-        // marginTop: '10%',
-        marginLeft: '10%',
-        lineHeight: '1.8',
-        marginBottom: `0px`,
-    };
     // メイン画像のスタイル
     const mainStyle: React.CSSProperties = {
         width: '100%',
@@ -164,6 +154,24 @@ function App() {
         boxSizing: 'border-box',
     };
 
+    const h2Stylemobile: React.CSSProperties = {
+        textAlign: 'left',
+        color: 'white',
+        marginLeft: '10%',
+        fontSize: `5Vw`,
+        boxSizing: 'border-box',
+        fontWeight: 'bold'
+    };
+
+    const h3Stylemobile: React.CSSProperties = {
+        textAlign: 'left',
+        color: 'white',
+        marginLeft: '10%',
+        fontSize: `4Vw`,
+        boxSizing: 'border-box',
+        fontWeight: 'bold'
+    };
+
     const h2Style: React.CSSProperties = {
         textAlign: 'left',
         color: 'white',
@@ -187,14 +195,32 @@ function App() {
         marginLeft: '2%',
         boxSizing: 'border-box',
         fontWeight: 'bold',
-        // backgroundColor: 'rgba(128, 128, 128, 0.5)'
     };
 
-    const textBosyumobile: React.CSSProperties = {
+    const textmobile: React.CSSProperties = {
         textAlign: 'left',
         color: 'white',
-        fontSize: `3.3vw`,
+        fontSize: `3.6vw`,
         marginLeft: '10%',
+        marginRight: '10%',
+        boxSizing: 'border-box',
+        fontWeight: 'bold',
+    };
+
+    const textboxmobile: React.CSSProperties = {
+        textAlign: 'left',
+        color: 'white',
+        fontSize: `3.6vw`,
+        marginLeft: '3%',
+        boxSizing: 'border-box',
+        fontWeight: 'bold'
+    };
+
+    const chuuimobile: React.CSSProperties = {
+        textAlign: 'left',
+        color: 'white',
+        fontSize: `3.1vw`,
+        marginLeft: '12%',
         boxSizing: 'border-box',
         fontWeight: 'bold'
     };
@@ -202,7 +228,7 @@ function App() {
     const boxStyle: React.CSSProperties = {
         border: '2px solid white',
         display: 'inline-block',
-        marginLeft: '10%',  // 左に10%のマージン
+        marginLeft: '10%',
         marginRight: '10%',
     };
 
@@ -245,40 +271,6 @@ function App() {
         marginBottom: '8px'
     };
 
-    const textChyuimobile: React.CSSProperties = {
-        textAlign: 'left',
-        color: 'white',
-        fontSize: `3vw`,
-        width: '80%',
-        marginTop: '5%',
-        marginLeft: '10%',
-        boxSizing: 'border-box',
-        fontWeight: 'bold',
-    };
-
-    const fotterStyle: React.CSSProperties = {
-        display: 'flex',
-        justifyContent: 'space-between',
-        width: '85%',
-        marginTop: '20px',
-        marginBottom: '7%',
-        alignItems: 'end',
-        marginLeft: '5%',
-        marginRight: '10%',
-    }
-
-    const fotterStylemobile: React.CSSProperties = {
-        display: 'flex',
-        // flexDirection: 'column',
-        width: '85%',
-        marginTop: '20px',
-        marginBottom: '7%',
-        alignItems: 'end',
-        marginLeft: '5%',
-        marginRight: '10%',
-        justifyContent: 'space-between',
-    }
-
     const fotterImageStyle: React.CSSProperties = {
         width: '15%',
         marginLeft: '80%'
@@ -286,11 +278,53 @@ function App() {
 
     const fotterImageStylemobile: React.CSSProperties = {
         width: '20%',
+        marginLeft: '75%'
     }
 
-    useEffect(() => {
-        mediumZoom('[data-zoomable]');
-    }, []);
+    const modalStyle: React.CSSProperties = {
+        position: 'fixed', // 'fixed' は文字列リテラル型
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 1000,
+    };
+
+    const closeButtonStyle: React.CSSProperties = {
+        position: 'absolute', // 'absolute' は文字列リテラル型
+        top: '10px',
+        right: '25px',
+        color: 'white',
+        fontSize: '35px',
+        fontWeight: 'bold',
+        cursor: 'pointer',
+    };
+
+    const enlargedImageStyle = {
+        maxWidth: '80%',
+        maxHeight: '80%',
+    };
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+    const openModal = (imageSrc: string) => {
+        setSelectedImage(imageSrc);
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
+    };
+
+    const openInNewTab = (url: string | URL | undefined) => {
+        window.open(url, '_blank', 'noopener,noreferrer');
+    };
+
+    const formUrl = 'https://l.messenger.com/l.php?u=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLScqbm34ZDuVnjKSP6fzLf7EEGEyw8vITzL9xqX4PQ2zjMqMGA%2Fviewform%3Fusp%3Dsf_link&h=AT2HY0wvBQm7yupU1y124HqsV2ABnsL2aYe19Ssw4NHHVRHAFPvT2Xu8M5WrrNb4U_-0b_PUEa5Y-XT5XJHUwx8g-oWECBlDtRPcNau-R-pgJbaV9l4gKKISxlG07i4O96fgmg';
+
+    const tanpenUrl = 'https://l.messenger.com/l.php?u=https%3A%2F%2Ffilmfreeway.com%2FObuseKeidaiArt&h=AT11ryF-rd9-KwkXoai6FygBmSl3bQeqKcB8edYrRQxltRC54p4BdjLGCnfKkBrf6Fn6fFXdbxPt__cHkaV5mRdC4jO8DtraYvHCAhzaXCnJAn4L9IAJdlGN-6vwmefp9vAp';
 
     return (
         <React.Fragment>
@@ -374,24 +408,28 @@ function App() {
                         <p style={textStyle}>募集期間　　1月11日（水）～2月11日（土）<br />
                             応募結果の連絡　3月上旬（予定）
                         </p>
-                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <div style={imageContainerStyle}>
                             <img
-                                data-zoomable
                                 src="/images/bosyuu.png"
                                 alt="bosyuu Pic"
                                 style={{ width: '70%', height: '80%', marginBottom: '3%' }}
+                                onClick={() => openModal("/images/bosyuu.png")}
                             />
                             <img
-                                data-zoomable
                                 src="/images/area.jpg"
                                 alt="area Pic"
                                 style={{ width: '40%', height: '80%' }}
+                                onClick={() => openModal("/images/area.jpg")}
                             />
+
+                            {selectedImage && (
+                                <div style={modalStyle}>
+                                    <span style={closeButtonStyle} onClick={closeModal}>&times;</span>
+                                    <img src={selectedImage} alt="Enlarged pic" style={enlargedImageStyle} />
+                                </div>
+                            )}
                         </div>
-                        <div style={buttonContainerStyle}>
-                            <button style={buttonStyle}>出店の応募はこちら</button>
-                            <button style={buttonStyle}>短編映画祭の応募はこちら</button>
-                        </div>
+
                         <h1 style={h2Style}>注意事項</h1>
                         <p style={h3Style}>キャンセルについて</p>
 
@@ -413,6 +451,12 @@ function App() {
 
                         <p style={h3Style}>開催中止の可能性について</p>
                         <p style={chuuiStyle}>天候や災害等によりイベントの開催を見合わせる可能性がございます。ご了承ください。</p>
+
+                        <div style={buttonContainerStyle}>
+                            <button style={buttonStyle} onClick={() => openInNewTab(formUrl)}>出店の応募はこちら</button>
+                            <button style={buttonStyle} onClick={() => openInNewTab(tanpenUrl)}>短編映画祭の応募はこちら</button>
+                        </div>
+
                         <h1 style={h1Style}>問い合わせ</h1>
                         <p style={textStyle}> ご不明点等がある場合は、　obuse.keidaiart@gmail.com  <br />
                             （境内アート×苗市実行委員）までご連絡ください。</p>
@@ -420,11 +464,14 @@ function App() {
                     </div>
                     :
                     <div style={{ marginTop: "22vw" }}>
-                        <p style={textBosyumobile}><br />
+                        <p style={textmobile}><br />
                             桜吹雪に誘われてたどりつくのは、<br />
                             境内に広がる見たことのない景色。<br />
-                            そこでは、無名も有名も、年齢も性別も関係のない<br />
-                            「表現者たち」が春の訪れを祝って遊んでいます。<br />
+                            そこでは、無名も有名も、<br />
+                            年齢も性別も関係のない<br />
+                            「表現者たち」が春の訪れを<br />
+                            祝って遊んでいます。
+                            <br />
                             <br />
                             香り立つご飯に、お酒に、おつまみ。<br />
                             自然のなかに溶け込むアート・クラフト。<br />
@@ -434,107 +481,93 @@ function App() {
                             1日限りの不思議な縁日へようこそ。<br />
                         </p>
                         <h1 style={h1Stylemobile}>境内アート×苗市とは</h1>
-                        <p style={textBosyumobile}>
-                            葛飾北斎にゆかりがあり、栗の名産地としても知られる<br />
+                        <p style={textmobile}>
+                            葛飾北斎にゆかりがあり、<br />
+                            栗の名産地としても知られる<br />
                             長野県小布施町。<br />
-                            その小布施町に鎮座し、400年以上の歴史をもつ<br />
+                            その小布施町に鎮座し、<br />
+                            400年以上の歴史をもつ<br />
                             禅宗の古刹・玄照寺を舞台に<br />
                             「境内アート×苗市」は開催されます。
                             <br />
-                            アート、パフォーマンス、クラフト、古本、食など<br />
-                            多彩な表現のかたちが、<br />
+                            アート、パフォーマンス、クラフト、<br />
+                            古本、食など多彩な表現のかたちが、<br />
                             参道、境内、堂内、広大な森に広がります。
                             <br /><br />
                         </p>
                         <h1 style={h1Stylemobile}>概要</h1>
-                        <p style={textBosyumobile}>開催日時：4月28日（日）10:00-16:00<br /></p>
-                        <p style={textBosyumobile}>会場：玄照寺＆小布施千年の森<br />（長野県上高井郡小布施町大字大島90）<br /></p>
-                        <p style={textBosyumobile}>主催：玄照寺奉賛会、境内アート×苗市実行委員会<br /><br />
-                            後援：小布施町、小布施町教育委員会、<br />小布施文化観光協会、小布施町商工会、大島自治会</p>
-                    </div>}
-                {isWide ? <div>
-
-
-                </div>
-                    :
-                    <div>
+                        <div style={boxStyle}>
+                            <p style={textboxmobile}>開催日時：4月28日（日）10:00-16:00<br /></p>
+                            <p style={textboxmobile}>会場：玄照寺＆小布施千年の森<br />（長野県上高井郡小布施町大字大島90）<br /></p>
+                            <p style={textboxmobile}>主催：玄照寺奉賛会、境内アート×苗市実行委員会<br /><br />
+                                後援：小布施町、小布施町教育委員会、<br />小布施文化観光協会、小布施町商工会、大島自治会</p>
+                        </div>
                         <h1 style={h1Stylemobile}>出展者募集</h1>
-                        <p style={textBosyumobile}>募集期間　　1月11日（水）～2月11日（土）<br />応募結果の連絡　3月上旬（予定）</p>
-
+                        <p style={textmobile}>募集期間　　1月11日（水）～2月11日（土）<br />応募結果の連絡　3月上旬（予定）</p>
                         <div style={{ height: '20px', width: '100px' }}></div>
-
-
                         <div style={{ display: 'flex', justifyContent: 'space-between', gap: '2%', marginLeft: '10%', marginRight: '10%' }}>
                             <div style={{ width: '50%' }}>
-
                             </div>
-
-
                         </div>
-                    </div>
-                }
+                        <div style={imageContainerStyle}>
+                            <img
+                                src="/images/bosyuu.png"
+                                alt="bosyuu Pic"
+                                style={{ width: '80%', height: '80%', marginBottom: '3%' }}
+                                onClick={() => openModal("/images/bosyuu.png")}
+                            />
+                            <img
+                                src="/images/area.jpg"
+                                alt="area Pic"
+                                style={{ width: '50%', height: '80%' }}
+                                onClick={() => openModal("/images/area.jpg")}
+                            />
 
-                {isWide ?
-                    <></>
-                    : <>
+                            {selectedImage && (
+                                <div style={modalStyle}>
+                                    <span style={closeButtonStyle} onClick={closeModal}>&times;</span>
+                                    <img src={selectedImage} alt="Enlarged pic" style={enlargedImageStyle} />
+                                </div>
+                            )}
+                        </div>
+                        <div style={{ height: "10%" }}></div>
+                        <h1 style={h2Stylemobile}>注意事項</h1>
+                        <p style={h3Stylemobile}>キャンセルについて</p>
+                        <p style={chuuimobile}>やむを得ない理由により、出展をキャンセルする場合は、<br />
+                            ➀ 出展名　➁ 代表者名　➂ キャンセル理由を、<br />
+                            obuse.keidaiart@gmail.com	までお知らせください。<br />
+                            4月15日（月）以降のキャンセルは、<br />
+                            出展料を全額請求させていただきますのでご了承ください。
+                        </p>
+
+                        <p style={h3Stylemobile}>貸出備品について</p>
+                        <p style={chuuimobile}>電源やテントの貸出はございません。各自ご用意ください。</p>
+
+                        <p style={h3Stylemobile}>ゴミについて</p>
+                        <p style={chuuimobile}>なるべくゴミを出さない、<br />
+                            持ち帰ることへのご協力をお願いいたします。</p>
+
+                        <p style={h3Stylemobile}>トラブルについて</p>
+                        <p style={chuuimobile}>開催中の盗難・事故・駐車場トラブルに関しては<br />
+                            自己責任でお願いいたします。</p>
+
+                        <p style={h3Stylemobile}>写真掲載について</p>
+                        <p style={chuuimobile}>スタッフにより撮影された写真は、当SNS及びサイトにて<br />
+                            掲載させていただく可能性があります。ご了承ください。</p>
+
+                        <p style={h3Stylemobile}>開催中止の可能性について</p>
+                        <p style={chuuimobile}>天候や災害等によりイベントの開催を<br />
+                            見合わせる可能性がございます。ご了承ください。</p>
+
                         <div style={buttonContainerStylemobile}>
-                            <img
-                                src="/images/area.jpg"
-                                alt="area Pic"
-                                style={{ width: '70%', height: '80%' }}
-                            />
-                            <div style={{ height: "10%", width: "5%" }}> a</div>
-                            <img
-                                src="/images/area.jpg"
-                                alt="area Pic"
-                                style={{ width: '70%', height: '80%' }}
-                            />
-                            <div style={{ height: "10%" }}></div>
-                            <h1 style={h1Stylemobile}>注意事項</h1><li style={textChyuimobile}>
-                                キャンセルについて
-                                <p style={{ fontSize: '2.6vw' }}>やむを得ない理由により、出展をキャンセルする場合は、</p>
-                                <p style={{ fontSize: '2.6vw' }}>➀ 出展名　➁ 代表者名　➂ キャンセル理由を、obuse.keidaiart@gmail.com	までお知らせください。</p>
-                                <p style={{ fontSize: '2.6vw' }}>4月15日（月）以降のキャンセルは、出展料を全額請求させていただきますのでご了承ください。</p>
-                            </li><li style={textChyuimobile}>
-                                貸出備品について
-                                <p style={{ fontSize: '2.6vw' }}>電源やテントの貸出はございません。各自ご用意ください。</p>
-                            </li><li style={textChyuimobile}>
-                                ゴミについて
-                                <p style={{ fontSize: '2.6vw' }}>なるべくゴミを出さない、持ち帰ることへのご協力をお願いいたします。</p>
-                            </li><li style={textChyuimobile}>
-                                トラブルについて
-                                <p style={{ fontSize: '2.6vw' }}>開催中の盗難・事故・駐車場トラブルに関しては自己責任でお願いいたします。</p>
-                            </li><li style={textChyuimobile}>
-                                写真掲載について
-                                <p style={{ fontSize: '2.6vw' }}>スタッフにより撮影された写真は、当SNS及びサイトにて掲載させていただく可能性があります。ご了承ください。</p>
-                            </li><li style={textChyuimobile}>
-                                開催中止の可能性について
-                                <p style={{ fontSize: '2.6vw' }}>天候や災害等によりイベントの開催を見合わせる可能性がございます。ご了承ください。</p>
-                            </li>
-                            <button style={buttonStylemobile}>出店の応募はこちら</button>
-                            <button style={buttonStylemobile}>短編映画祭の応募はこちら</button>
+                            <button style={buttonStylemobile} onClick={() => openInNewTab(formUrl)}>出店の応募はこちら</button>
+                            <button style={buttonStylemobile} onClick={() => openInNewTab(tanpenUrl)}>短編映画祭の応募はこちら</button>
                         </div>
-
-
-                    </>
-                }
-                {isWide
-                    ? <></> :
-                    <></>
-                }
-
-
-                {isWide ?
-                    <div style={fotterStyle}>
-
-                    </div> :
-                    <><h1 style={h1Stylemobile}>問い合わせ</h1><p style={textBosyumobile}>ご不明点等がある場合は、　obuse.keidaiart@gmail.com<br />
-                        （境内アート×苗市実行委員）までご連絡ください。</p><div style={fotterStylemobile}>
-                            <img src="/images/footer_pic.png" alt="Main Pic" style={fotterImageStylemobile} />
-                        </div></>
-                }
-
-
+                        <h1 style={h1Stylemobile}>問い合わせ</h1><p style={textmobile}>ご不明点等がある場合は、<br />
+                            obuse.keidaiart@gmail.com<br />
+                            (境内アート×苗市実行委員)までご連絡ください</p>
+                        <img src="/images/footer_pic.png" alt="Main Pic" style={fotterImageStylemobile} />
+                    </div>}
             </div>
 
         </React.Fragment >
@@ -542,5 +575,4 @@ function App() {
 }
 
 export default App;
-
 
