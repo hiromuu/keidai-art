@@ -28,8 +28,15 @@ function App() {
         color: 'white',
         padding: '20px',
         fontSize: `1.7vw`,
-        marginTop: '5%',
+        // marginTop: '5%',
         marginLeft: '10%',
+        lineHeight: '1.8',
+        marginBottom: `0px`,
+    };
+    const textStyle2: React.CSSProperties = {
+        textAlign: 'left',
+        color: 'white',
+        fontSize: `1.3vw`,
         lineHeight: '1.8',
         marginBottom: `0px`,
     };
@@ -37,7 +44,7 @@ function App() {
         textAlign: 'left',
         color: 'white',
         fontSize: `3vw`,
-        marginTop: '10%',
+        // marginTop: '10%',
         marginLeft: '10%',
         lineHeight: '1.8',
         marginBottom: `0px`,
@@ -226,7 +233,7 @@ function App() {
     }
 
     const boxTextmobile: React.CSSProperties = {
-        fontSize: '3vw',
+        fontSize: '2vh',
         color: 'rgb(234, 96, 142)',
         textAlign: 'center',
         margin: '0',
@@ -239,12 +246,12 @@ function App() {
     }
 
     const boxText2mobile: React.CSSProperties = {
-        fontSize: '3vw',
+        fontSize: '2vh',
         color: 'white',
         textAlign: 'center',
     }
     const boxText2mobile2: React.CSSProperties = {
-        fontSize: '3vw',
+        fontSize: '2vh',
         color: 'rgb(234, 96, 142)',
         textAlign: 'center',
     }
@@ -272,10 +279,11 @@ function App() {
         width: '46.5%',
         height: '6vh',
         backgroundColor: 'white',
-        top: '15.8vh',
+        top: '8.7vw',
         left: '51%',
         border: 'solid',
         borderColor: 'transparent',
+        transform: 'translateY(-50%)',
     };
 
     const noBoothBoxStyle: React.CSSProperties = {
@@ -327,7 +335,6 @@ function App() {
         border: "solid",
         width: '100%',
         height: '2vh',
-        marginRight: '6%',
         borderColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
@@ -340,7 +347,6 @@ function App() {
         border: "solid",
         width: '100%',
         height: '2vh',
-        marginRight: '6%',
         borderColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
@@ -466,11 +472,12 @@ function App() {
         border: 'solid',
         borderColor: 'transparent',
         width: '40%',
-        height: '5vh',
+        height: '6vw',
         alignItems: 'center',
         justifyContent: 'center',
         display: 'flex',
         marginLeft: '6%',
+        marginTop: '2%',
     };
 
     const noBoothBoxStyle8: React.CSSProperties = {
@@ -489,11 +496,12 @@ function App() {
         border: 'solid',
         borderColor: 'transparent',
         width: '40%',
-        height: '5vh',
+        height: '6vw',
         alignItems: 'center',
         justifyContent: 'center',
         display: 'flex',
         marginRight: '6%',
+        marginTop: '2%',
     };
     const noBoothBoxStyle9: React.CSSProperties = {
         border: 'solid',
@@ -561,7 +569,7 @@ function App() {
     const bothTextmobile: React.CSSProperties = {
         color: 'white',
         fontWeight: 'bold',
-        fontSize: '3.5vw',
+        fontSize: '3vw',
         textAlign: 'left',
     }
 
@@ -644,13 +652,14 @@ function App() {
 
     const fotterStylemobile: React.CSSProperties = {
         display: 'flex',
-        flexDirection: 'column',
+        // flexDirection: 'column',
         width: '85%',
         marginTop: '20px',
         marginBottom: '7%',
         alignItems: 'end',
         marginLeft: '5%',
         marginRight: '10%',
+        justifyContent: 'space-between',
     }
 
     const textKouen: React.CSSProperties = {
@@ -679,15 +688,15 @@ function App() {
 
     const whitebox: React.CSSProperties = {
         width: '88%',
-        height: '2vh',
+        // height: '2vh',
         background: 'white',
         marginLeft: '6%',
-        marginBottom: '5%',
+        marginBottom: '2%',
     }
 
     const whitebox2: React.CSSProperties = {
         width: '88%',
-        height: '2vh',
+        // height: '2vh',
         background: 'white',
         marginLeft: '6%',
     }
@@ -739,22 +748,23 @@ function App() {
 
                 </div>
                 {isWide ?
-                    <p style={textStyle}>
-                        桜吹雪に誘われてたどりつくのは、<br />
-                        境内に広がる見たことのない景色。<br />
-                        そこでは、無名も有名も、年齢も性別も関係のない<br />
-                        「表現者たち」が春の訪れを祝って遊んでいます。<br />
-                        <br />
-                        香り立つご飯に、お酒に、おつまみ。<br />
-                        自然のなかに溶け込むアート・クラフト。<br />
-                        そしてどこにいても聞こえてくる<br />
-                        大小様々な笑い声。<br />
-                        迷い込んだら出られない、<br />
-                        1日限りの不思議な縁日へようこそ。<br />
-                    </p>
-                    :
-                    <div style={{ marginTop: "7vh" }}>
-                        <p style={textStylemobile}>
+                    <div style={{ marginTop: "5%" }}>
+                        <h1 style={h1Style}>境内アート×苗市とは</h1>
+                        <p style={textStyle}>
+                            葛飾北斎にゆかりがあり、栗の名産地としても知られる長野県小布施町。
+                            <br />
+                            その小布施町に鎮座し、400年以上の歴史をもつ禅宗の古刹・玄照寺を舞台に<br />
+                            「境内アート×苗市」は開催されます。
+                            <br />
+                            アート、パフォーマンス、クラフト、古本、食など多彩な表現のかたちが、<br />
+                            参道、境内、堂内、広大な森に広がります。
+                            <br /> </p>
+                        <p style={textBosyu}>開催日時：4月28日（日）10:00-16:00</p>
+                        <p style={textBosyu}>会場：玄照寺＆小布施千年の森（長野県上高井郡小布施町大字大島90）</p>
+                        <p style={textBosyu}>主催：玄照寺奉賛会、境内アート×苗市実行委員会<br />
+                            後援：小布施町、小布施町教育委員会、小布施文化観光協会、小布施町商工会、大島自治会</p>
+
+                        <p style={textStyle}>
                             桜吹雪に誘われてたどりつくのは、<br />
                             境内に広がる見たことのない景色。<br />
                             そこでは、無名も有名も、年齢も性別も関係のない<br />
@@ -767,459 +777,208 @@ function App() {
                             迷い込んだら出られない、<br />
                             1日限りの不思議な縁日へようこそ。<br />
                         </p>
+                    </div>
+                    :
+                    <div style={{ marginTop: "22vw" }}>
+                        <p style={textBosyumobile}><br />
+                            桜吹雪に誘われてたどりつくのは、<br />
+                            境内に広がる見たことのない景色。<br />
+                            そこでは、無名も有名も、年齢も性別も関係のない<br />
+                            「表現者たち」が春の訪れを祝って遊んでいます。<br />
+                            <br />
+                            香り立つご飯に、お酒に、おつまみ。<br />
+                            自然のなかに溶け込むアート・クラフト。<br />
+                            そしてどこにいても聞こえてくる<br />
+                            大小様々な笑い声。<br />
+                            迷い込んだら出られない、<br />
+                            1日限りの不思議な縁日へようこそ。<br />
+                        </p>
+                        <h1 style={h1Stylemobile}>境内アート×苗市とは</h1>
+                        <p style={textBosyumobile}>
+                            葛飾北斎にゆかりがあり、栗の名産地としても知られる<br />
+                            長野県小布施町。<br />
+                            その小布施町に鎮座し、400年以上の歴史をもつ<br />
+                            禅宗の古刹・玄照寺を舞台に<br />
+                            「境内アート×苗市」は開催されます。
+                            <br />
+                            アート、パフォーマンス、クラフト、古本、食など<br />
+                            多彩な表現のかたちが、<br />
+                            参道、境内、堂内、広大な森に広がります。
+                            <br /><br />
+                        </p>
+                        <h1 style={h1Stylemobile}>概要</h1>
+                        <p style={textBosyumobile}>開催日時：4月28日（日）10:00-16:00<br /></p>
+                        <p style={textBosyumobile}>会場：玄照寺＆小布施千年の森<br />（長野県上高井郡小布施町大字大島90）<br /></p>
+                        <p style={textBosyumobile}>主催：玄照寺奉賛会、境内アート×苗市実行委員会<br /><br />
+                            後援：小布施町、小布施町教育委員会、<br />小布施文化観光協会、小布施町商工会、大島自治会</p>
+
+
                     </div>}
                 {isWide ? <div>
                     <h1 style={h1Style}>出展者募集</h1>
-                    <p style={textBosyu}>募集期間　　1月11日（水）～2月11日（土）</p></div>
+                    <p style={textBosyu}>募集期間　　1月11日（水）～2月11日（土）</p>
+                    <p style={textStyle}>
+                        応募結果の連絡　3月上旬（予定）</p>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', gap: '2%', marginLeft: '10%', marginRight: '10%' }}>
+                        <div style={{ width: '50%' }}>
+                            <img
+                                src="/images/area.jpg"
+                                alt="area Pic"
+                                style={{ width: '100%', height: '80%' }}
+                            />
+                        </div>
+                        <div style={{ width: '50%' }}>
+                            <p style={textBosyu}>出展ゾーンのイメージ</p>
+                            <p style={textStyle2}>
+                                ・アートには、「境内ゾーン」をご提供します。<br />
+                                ・アートには、「境内ゾーン」をご提供します。<br />
+                                ・カフェや飲食は、選考後「参道ゾーン」or「千年の森ゾーン」のいずれかをご提供します。<br />
+                                ・古本には「参道ゾーン」をご提供します。<br />
+                                ・クラフト・ワークショップには「千年の森ゾーン」をご提供します。<br />
+                                ・短編映画には、参道ゾーンと境内ゾーンの間にある「観音堂」をご提供します。<br />
+                                ・これらの出展場所は状況に応じ、変動する可能性があります。ご了承ください。</p>
+                        </div>
+                    </div>
+                </div>
                     :
                     <div>
                         <h1 style={h1Stylemobile}>出展者募集</h1>
-                        <p style={textBosyumobile}>募集期間　　1月11日（水）～2月11日（土）</p>
+                        <p style={textBosyumobile}>募集期間　　1月11日（水）～2月11日（土）<br />応募結果の連絡　3月上旬（予定）</p>
+
+                        <div style={{ height: '20px', width: '100px' }}></div>
+
+
+                        <div style={{ display: 'flex', justifyContent: 'space-between', gap: '2%', marginLeft: '10%', marginRight: '10%' }}>
+                            <div style={{ width: '50%' }}>
+
+                            </div>
+
+
+                        </div>
                     </div>
                 }
-                {isWide ?
-                    <div style={rectangleContainerStyle}>
-                        <div style={rectangleStyle}>
-                            <p style={boxTitle}>抽選あり（応募多数の場合）</p>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle}>
-                                    <p style={boxText2}>ブースなし</p>
-                                </div>
-                                <div style={noBoothBoxStyle2}>
-                                    <p style={boxText2}>要相談</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle5}>
-                                    <p style={boxText}>パフォーマンス</p>
-                                </div>
-                                <div style={noBoothBoxStyle6}>
-                                    <p style={boxText}>アート</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle7}>
-                                    <p style={bothTextPrice}>￥0</p>
-                                </div>
-                                <div style={noBoothBoxStyle8}>
-                                    <p style={bothTextPrice}>￥0</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle7}>
-                                    <p style={bothTextPrice}>5組</p>
-                                </div>
-                                <div style={noBoothBoxStyle8}>
-                                    <p style={bothTextPrice}>20組</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle9}>
-                                    <p style={bothText}>
-                                        ・大道芸、楽器隊など
-                                    </p>
-                                </div>
-                                <div style={noBoothBoxStyle10}>
-                                    <p style={bothText}>
-                                        ・絵画、書、オブジェ、インスタレーションなど
-                                    </p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle9}>
-                                    <p style={bothText}>
-                                        ・移動しながらできる等
-                                        空間占有をしないもの
-                                    </p>
-                                </div>
-                                <div style={noBoothBoxStyle10}>
-                                    <p style={bothText}>
-                                        ・当日の販売を伴わない、販売交渉可能
-                                    </p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle9}>
-                                    <p style={bothText}>
-                                        ・投げ銭OK
-                                    </p>
-                                </div>
-                                <div style={noBoothBoxStyle10}>
-                                </div>
-                            </div>
-                        </div>
-                        <div style={rectangleStyle}>
-                            <p style={boxTitle}>選考あり（2月22日以降確定）</p>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle3}>
-                                    <p style={boxText2}>6m×6m</p>
-                                </div>
-                                <div style={noBoothBoxStyle4}>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle5}>
-                                    <p style={boxText}>飲食</p>
-                                </div>
-                                <div style={noBoothBoxStyle6}>
-                                    <p style={boxText}>短編映画</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle7}>
-                                    <p style={bothTextPrice}>￥7,000</p>
-                                </div>
-                                <div style={noBoothBoxStyle8}>
-                                    <p style={bothTextPrice}>￥1,000</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle7}>
-                                    <p style={bothTextPrice}>30組</p>
-                                </div>
-                                <div style={noBoothBoxStyle8}>
-                                    <p style={bothTextPrice}>5組</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle9}>
-                                    <p style={bothText}>
-                                        ・食事類、弁当、パン、菓子、コーヒー、加工品など
-                                    </p>
-                                </div>
-                                <div style={noBoothBoxStyle10}>
-                                    <p style={bothText}>
-                                        ・30分以内の短編
-                                    </p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle7}>
-                                </div>
-                                <div style={noBoothBoxStyle8}>
-                                    <p style={bothText}>
-                                        ・Film Freewayより別途募集
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div style={rectangleStyle}>
-                            <p style={boxTitle}>先着</p>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle7}>
-                                </div>
-                                <div style={noBoothBoxStyle4}>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle5}>
-                                    <p style={boxText}>クラフト<br />
-                                        ワークショップ</p>
-                                </div>
-                                <div style={noBoothBoxStyle6}>
-                                    <p style={boxText}>一箱古本</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle7}>
-                                    <p style={bothTextPrice}>￥4,000</p>
-                                </div>
-                                <div style={noBoothBoxStyle8}>
-                                    <p style={bothTextPrice}>￥1,000</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle7}>
-                                    <p style={bothTextPrice}>90組</p>
-                                </div>
-                                <div style={noBoothBoxStyle8}>
-                                    <p style={bothTextPrice}>10組</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle9}>
-                                    <p style={bothText}>
-                                        ・工芸、木工、革製品、衣、似顔絵、アクセサリー、花、マッサージなど
-                                    </p>
-                                </div>
-                                <div style={noBoothBoxStyle10}>
-                                    <p style={bothText}>
-                                        ・絵本、一般書、雑誌、CDなど
-                                    </p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle9}>
-                                    <p style={bothText}>
-                                        ・参加費徴収ワークショップ含む
-                                    </p>
-                                </div>
-                                <div style={noBoothBoxStyle10}>
-                                    <p style={bothText}>
-                                        ・リンゴ箱程度のサイズ1箱
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div style={spanningRectangleStyle}>
-                            <p style={boxText}>ブースあり</p>
-                        </div>
-                        <div style={spanningRectangleStyle2}>
-                            <p style={boxText}>3m×3m以内</p>
-                        </div>
 
-                    </div>
-                    :
-                    <div style={rectangleContainerStylemobile}>
-                        <div style={rectangleStylemobile}>
-                            <p style={boxTitlemobile}>抽選あり（応募多数の場合）</p>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStylemobile}>
-                                    <p style={boxText2mobile}>ブースなし</p>
-                                </div>
-                                <div style={noBoothBoxStyle2mobile}>
-                                    <div style={noBoothBoxStyle2mobile1}><p style={boxText2mobile2}>ブースあり</p></div>
-                                    <div style={noBoothBoxStyle2mobile2}><p style={boxText2mobile}>要相談</p></div>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle5mobile}>
-                                    <p style={boxTextmobile}>パフォーマンス</p>
-                                </div>
-                                <div style={noBoothBoxStyle6mobile}>
-                                    <p style={boxTextmobile}>アート</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle7mobile}>
-                                    <p style={bothTextPricemobile}>￥0</p>
-                                </div>
-                                <div style={noBoothBoxStyle8mobile}>
-                                    <p style={bothTextPricemobile}>￥0</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle7mobile}>
-                                    <p style={bothTextPricemobile}>5組</p>
-                                </div>
-                                <div style={noBoothBoxStyle8mobile}>
-                                    <p style={bothTextPricemobile}>20組</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle9mobile}>
-                                    <p style={bothTextmobile}>
-                                        ・大道芸、楽器隊など
-                                    </p>
-                                </div>
-                                <div style={noBoothBoxStyle10mobile}>
-                                    <p style={bothTextmobile}>
-                                        ・絵画、書、オブジェ、インスタレーションなど
-                                    </p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle9mobile}>
-                                    <p style={bothTextmobile}>
-                                        ・移動しながらできる等
-                                        空間占有をしないもの
-                                    </p>
-                                </div>
-                                <div style={noBoothBoxStyle10mobile}>
-                                    <p style={bothTextmobile}>
-                                        ・当日の販売を伴わない、販売交渉可能
-                                    </p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle9mobile}>
-                                    <p style={bothTextmobile}>
-                                        ・投げ銭OK
-                                    </p>
-                                </div>
-                                <div style={noBoothBoxStyle10mobile}>
-                                </div>
-                            </div>
-                        </div>
-                        <div style={rectangleStylemobile}>
-                            <p style={boxTitlemobile}>選考あり（2月22日以降確定）</p>
-                            <div style={whitebox}>
-                                <p style={boxTextmobile}>ブースあり</p>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle3mobile}>
-                                    <p style={boxText2mobile}>6m×6m</p>
-                                </div>
-                                <div style={noBoothBoxStyle4mobile}>
-                                    <p style={boxTextmobile}>3m×3m以内</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle5mobile}>
-                                    <p style={boxTextmobile}>飲食</p>
-                                </div>
-                                <div style={noBoothBoxStyle6mobile}>
-                                    <p style={boxTextmobile}>短編映画</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle7mobile}>
-                                    <p style={bothTextPricemobile}>￥7,000</p>
-                                </div>
-                                <div style={noBoothBoxStyle8mobile}>
-                                    <p style={bothTextPricemobile}>￥1,000</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle7mobile}>
-                                    <p style={bothTextPricemobile}>30組</p>
-                                </div>
-                                <div style={noBoothBoxStyle8mobile}>
-                                    <p style={bothTextPricemobile}>5組</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle9mobile}>
-                                    <p style={bothTextmobile}>
-                                        ・食事類、弁当、パン、菓子、コーヒー、加工品など
-                                    </p>
-                                </div>
-                                <div style={noBoothBoxStyle10mobile}>
-                                    <p style={bothTextmobile}>
-                                        ・30分以内の短編
-                                    </p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle7mobile}>
-                                </div>
-                                <div style={noBoothBoxStyle8mobile}>
-                                    <p style={bothTextmobile}>
-                                        ・Film Freewayより別途募集
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div style={rectangleStylemobile}>
-                            <p style={boxTitlemobile}>先着</p>
-                            <div style={whitebox}>
-                                <p style={boxTextmobile}>ブースあり</p>
-                            </div>
-                            <div style={whitebox2}>
-                                <p style={boxTextmobile}>3m×3m以内</p>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle5mobile}>
-                                    <p style={boxTextmobile}>クラフト<br />
-                                        ワークショップ</p>
-                                </div>
-                                <div style={noBoothBoxStyle6mobile}>
-                                    <p style={boxTextmobile}>一箱古本</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle7mobile}>
-                                    <p style={bothTextPricemobile}>￥4,000</p>
-                                </div>
-                                <div style={noBoothBoxStyle8mobile}>
-                                    <p style={bothTextPricemobile}>￥1,000</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle7mobile}>
-                                    <p style={bothTextPricemobile}>90組</p>
-                                </div>
-                                <div style={noBoothBoxStyle8mobile}>
-                                    <p style={bothTextPricemobile}>10組</p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle9mobile}>
-                                    <p style={bothTextmobile}>
-                                        ・工芸、木工、革製品、衣、似顔絵、アクセサリー、花、マッサージなど
-                                    </p>
-                                </div>
-                                <div style={noBoothBoxStyle10mobile}>
-                                    <p style={bothTextmobile}>
-                                        ・絵本、一般書、雑誌、CDなど
-                                    </p>
-                                </div>
-                            </div>
-                            <div style={boothOptionsContainer}>
-                                <div style={noBoothBoxStyle9mobile}>
-                                    <p style={bothTextmobile}>
-                                        ・参加費徴収ワークショップ含む
-                                    </p>
-                                </div>
-                                <div style={noBoothBoxStyle10mobile}>
-                                    <p style={bothTextmobile}>
-                                        ・リンゴ箱程度のサイズ1箱
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                }
                 {isWide ?
                     <><div style={buttonContainerStyle}>
                         <button style={buttonStyle}>出店の応募はこちら</button>
                         <button style={buttonStyle}>短編映画祭の応募はこちら</button>
-                    </div><p style={textChyui}>
-                            パフォーマンス・アート・飲食・短編映画は、全体のバランス調整のため選考となります。<br />
-                            結果は、2月22日以降にお知らせします。<br />
-                            <br />
-                            短編映画は、FilmFreewayより募集します。<br />
-                            こちらからお申し込みください。<br />
-                            <br />
-                            古本・クラフト・ワークショップは、先着順となりますので定員に達し次第、締め切ります。<br />
-                            <br />
-                            パフォーマンスにはブースがございません。<br />
-                            <br />
-                            アートブースのサイズは要相談。飲食には 6m×6m以内、それ以外には 3m×3m以内のブースをご用意します。<br />
-                        </p></>
+                    </div></>
                     : <>
                         <div style={buttonContainerStylemobile}>
+                            <img
+                                src="/images/area.jpg"
+                                alt="area Pic"
+                                style={{ width: '70%', height: '80%' }}
+                            />
+                            <div style={{ height: "10%", width: "5%" }}> a</div>
+                            <img
+                                src="/images/area.jpg"
+                                alt="area Pic"
+                                style={{ width: '70%', height: '80%' }}
+                            />
+                            <div style={{ height: "10%" }}></div>
+                            <h1 style={h1Stylemobile}>注意事項</h1><li style={textChyuimobile}>
+                                キャンセルについて
+                                <p style={{ fontSize: '2.6vw' }}>やむを得ない理由により、出展をキャンセルする場合は、</p>
+                                <p style={{ fontSize: '2.6vw' }}>➀ 出展名　➁ 代表者名　➂ キャンセル理由を、obuse.keidaiart@gmail.com	までお知らせください。</p>
+                                <p style={{ fontSize: '2.6vw' }}>4月15日（月）以降のキャンセルは、出展料を全額請求させていただきますのでご了承ください。</p>
+                            </li><li style={textChyuimobile}>
+                                貸出備品について
+                                <p style={{ fontSize: '2.6vw' }}>電源やテントの貸出はございません。各自ご用意ください。</p>
+                            </li><li style={textChyuimobile}>
+                                ゴミについて
+                                <p style={{ fontSize: '2.6vw' }}>なるべくゴミを出さない、持ち帰ることへのご協力をお願いいたします。</p>
+                            </li><li style={textChyuimobile}>
+                                トラブルについて
+                                <p style={{ fontSize: '2.6vw' }}>開催中の盗難・事故・駐車場トラブルに関しては自己責任でお願いいたします。</p>
+                            </li><li style={textChyuimobile}>
+                                写真掲載について
+                                <p style={{ fontSize: '2.6vw' }}>スタッフにより撮影された写真は、当SNS及びサイトにて掲載させていただく可能性があります。ご了承ください。</p>
+                            </li><li style={textChyuimobile}>
+                                開催中止の可能性について
+                                <p style={{ fontSize: '2.6vw' }}>天候や災害等によりイベントの開催を見合わせる可能性がございます。ご了承ください。</p>
+                            </li>
                             <button style={buttonStylemobile}>出店の応募はこちら</button>
                             <button style={buttonStylemobile}>短編映画祭の応募はこちら</button>
                         </div>
-                        <p style={textChyuimobile}>
-                            パフォーマンス・アート・飲食・短編映画は、全体のバランス調整のため選考となります。<br />
-                            結果は、2月22日以降にお知らせします。<br />
-                            <br />
-                            短編映画は、FilmFreewayより募集します。<br />
-                            こちらからお申し込みください。<br />
-                            <br />
-                            古本・クラフト・ワークショップは、先着順となりますので定員に達し次第、締め切ります。<br />
-                            <br />
-                            パフォーマンスにはブースがございません。<br />
-                            <br />
-                            アートブースのサイズは要相談。飲食には 6m×6m以内、それ以外には 3m×3m以内のブースをご用意します。<br />
-                        </p>
+
+
                     </>
                 }
+                {isWide
+                    ? <><h1 style={h1Style}>注意事項</h1>
+                        <li style={{
+                            color: 'white',
+                            fontSize: `1.3vw`,
+                            marginLeft: '10%'
+                        }}>
+                            キャンセルについて
+                            <ul style={{ fontSize: '1vw' }}>やむを得ない理由により、出展をキャンセルする場合は、</ul>
+                            <ul style={{ fontSize: '1vw' }}>➀ 出展名　➁ 代表者名　➂ キャンセル理由を、obuse.keidaiart@gmail.com	までお知らせください。</ul>
+                            <ul style={{ fontSize: '1vw' }}>4月15日（月）以降のキャンセルは、出展料を全額請求させていただきますのでご了承ください。</ul>
+                        </li>
+                        <li style={{
+                            color: 'white',
+                            fontSize: `1.3vw`,
+                            marginLeft: '10%'
+                        }}>
+                            貸出備品について
+                            <ul style={{ fontSize: '1vw' }}>電源やテントの貸出はございません。各自ご用意ください。</ul>
+                        </li>
+                        <li style={{
+                            color: 'white',
+                            fontSize: `1.3vw`,
+                            marginLeft: '10%'
+                        }}>
+                            ゴミについて
+                            <ul style={{ fontSize: '1vw' }}>なるべくゴミを出さない、持ち帰ることへのご協力をお願いいたします。</ul>
+                        </li><li style={{
+                            color: 'white',
+                            fontSize: `1.3vw`,
+                            marginLeft: '10%'
+                        }}>
+                            トラブルについて
+                            <ul style={{ fontSize: '1vw' }}>開催中の盗難・事故・駐車場トラブルに関しては自己責任でお願いいたします。</ul>
+                        </li><li style={{
+                            color: 'white',
+                            fontSize: `1.3vw`,
+                            marginLeft: '10%'
+                        }}>
+                            写真掲載について
+                            <ul style={{ fontSize: '1vw' }}>スタッフにより撮影された写真は、当SNS及びサイトにて掲載させていただく可能性があります。ご了承ください。</ul>
+                        </li><li style={{
+                            color: 'white',
+                            fontSize: `1.3vw`,
+                            marginLeft: '10%'
+                        }}>
+                            開催中止の可能性について
+                            <ul style={{ fontSize: '1vw' }}>天候や災害等によりイベントの開催を見合わせる可能性がございます。ご了承ください。</ul>
+                        </li></> :
+                    <></>
+                }
+
+
                 {isWide ?
                     <div style={fotterStyle}>
                         <p style={textKouen}>
-                            主催：玄照寺奉賛会、境内アート×苗市実行委員会<br />
-                            後援：小布施町、小布施町教育委員会、小布施文化観光協会、小布施町商工会、大島自治会
+                            問い合わせ<br />
+                            ご不明点等がある場合は、　obuse.keidaiart@gmail.com  <br />（境内アート×苗市実行委員）までご連絡ください。
                         </p>
                         <img src="/images/footer_pic.png" alt="Main Pic" style={fotterImageStyle} />
                     </div> :
-                    <div style={fotterStylemobile}>
-                        <img src="/images/footer_pic.png" alt="Main Pic" style={fotterImageStylemobile} />
-                        <p style={textKouenmobile}>
-                            主催：玄照寺奉賛会、境内アート×苗市実行委員会<br />
-                            後援：小布施町、小布施町教育委員会、小布施文化観光協会、小布施町商工会、大島自治会
-                        </p>
-                    </div>
+                    <><h1 style={h1Stylemobile}>問い合わせ</h1><p style={textBosyumobile}>ご不明点等がある場合は、　obuse.keidaiart@gmail.com<br />
+                        （境内アート×苗市実行委員）までご連絡ください。</p><div style={fotterStylemobile}>
+                            <img src="/images/footer_pic.png" alt="Main Pic" style={fotterImageStylemobile} />
+                        </div></>
                 }
 
 
             </div>
 
-        </React.Fragment>
+        </React.Fragment >
     );
 }
 
 export default App;
+
+
