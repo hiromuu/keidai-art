@@ -324,7 +324,7 @@ function App() {
 
     const formUrl = 'https://l.messenger.com/l.php?u=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLScqbm34ZDuVnjKSP6fzLf7EEGEyw8vITzL9xqX4PQ2zjMqMGA%2Fviewform%3Fusp%3Dsf_link&h=AT2HY0wvBQm7yupU1y124HqsV2ABnsL2aYe19Ssw4NHHVRHAFPvT2Xu8M5WrrNb4U_-0b_PUEa5Y-XT5XJHUwx8g-oWECBlDtRPcNau-R-pgJbaV9l4gKKISxlG07i4O96fgmg';
 
-    const tanpenUrl = 'https://l.messenger.com/l.php?u=https%3A%2F%2Ffilmfreeway.com%2FObuseKeidaiArt&h=AT11ryF-rd9-KwkXoai6FygBmSl3bQeqKcB8edYrRQxltRC54p4BdjLGCnfKkBrf6Fn6fFXdbxPt__cHkaV5mRdC4jO8DtraYvHCAhzaXCnJAn4L9IAJdlGN-6vwmefp9vAp';
+    const tanpenUrl = 'https://filmfreeway.com/ObuseKeidaiArt';
 
     return (
         <React.Fragment>
