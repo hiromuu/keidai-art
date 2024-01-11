@@ -322,7 +322,7 @@ function App() {
         window.open(url, '_blank', 'noopener,noreferrer');
     };
 
-    const formUrl = 'https://l.messenger.com/l.php?u=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLScqbm34ZDuVnjKSP6fzLf7EEGEyw8vITzL9xqX4PQ2zjMqMGA%2Fviewform%3Fusp%3Dsf_link&h=AT2HY0wvBQm7yupU1y124HqsV2ABnsL2aYe19Ssw4NHHVRHAFPvT2Xu8M5WrrNb4U_-0b_PUEa5Y-XT5XJHUwx8g-oWECBlDtRPcNau-R-pgJbaV9l4gKKISxlG07i4O96fgmg';
+    const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScqbm34ZDuVnjKSP6fzLf7EEGEyw8vITzL9xqX4PQ2zjMqMGA/viewform?fbclid=IwAR3Aarlz1ZCSGUKl9nhoSRGM5DCVaXL7IdMP4DwAhyqPNIcr-8M8qfhYem0';
 
     const tanpenUrl = 'https://filmfreeway.com/ObuseKeidaiArt';
 
