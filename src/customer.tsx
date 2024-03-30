@@ -1,4 +1,6 @@
 import React from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import useMedia from "use-media";
 
 function HomePage() {
@@ -194,6 +196,39 @@ function HomePage() {
     marginLeft: "75%",
   };
 
+  const imageStylecal: React.CSSProperties = {
+    width: "40%", // 画像の幅を250pxに設定
+    height: "auto", // 画像の高さを250pxに設定
+    borderRadius: "20px", // 画像の角を20pxの半径で丸くする
+    objectFit: "cover", // 画像のアスペクト比を保ちつつ、コンテナに合わせてサイズを調整
+  };
+
+  const images = [
+    "/images/arigasaki.jpg",
+    "/images/sabunyuma.jpg",
+    // 他の画像パスを追加
+  ];
+
+  const responsive = {
+    superLargeDesktop: {
+      // 画面が大きい場合は3つのアイテムを表示
+      breakpoint: { max: 4000, min: 1024 },
+      items: 3,
+    },
+    desktop: {
+      breakpoint: { max: 1024, min: 768 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 768, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+
   return (
     <React.Fragment>
       <style>
@@ -376,6 +411,65 @@ function HomePage() {
             </div>
 
             <h1 style={h1Style}>会場地図・駐車場案内</h1>
+            {/* <Carousel
+              autoPlay
+              infiniteLoop
+              showThumbs={false}
+              showStatus={false}
+              interval={3000} // 3秒ごとにスライドを切り替え
+            >
+              {images.map((image, index) => (
+                <div
+                  key={index}
+                  style={{ display: "flex", justifyContent: "center" }}
+                >
+                  {" "}
+                  {/* 画像を中央に配置 */}
+            {/* <img
+                    src={image}
+                    alt={`Slide ${index + 1}`}
+                    style={imageStylecal}
+                  />
+                </div>
+              ))} */}
+            {/* </Carousel> */}
+            <Carousel responsive={responsive}>
+              <div>
+                <img
+                  src="/images/arigasaki.jpg"
+                  alt="Image 1"
+                  style={imageStylecal}
+                />
+              </div>
+              <div>
+                <img
+                  src="/images/arigasaki.jpg"
+                  alt="Image 2"
+                  style={imageStylecal}
+                />
+              </div>
+              <div>
+                <img
+                  src="/images/arigasaki.jpg"
+                  alt="Image 3"
+                  style={imageStylecal}
+                />
+              </div>
+              <div>
+                <img
+                  src="/images/arigasaki.jpg"
+                  alt="Image 4"
+                  style={imageStylecal}
+                />
+              </div>
+              <div>
+                <img
+                  src="/images/arigasaki.jpg"
+                  alt="Image 5"
+                  style={imageStylecal}
+                />
+              </div>
+            </Carousel>
 
             <h1 style={h1Style}>問い合わせ</h1>
             <p style={textStyle}>
@@ -478,7 +572,43 @@ function HomePage() {
               </p>
               <p style={textboxmobile}>16:00 終了</p>
             </div>
-
+            <Carousel responsive={responsive}>
+              <div>
+                <img
+                  src="/images/arigasaki.jpg"
+                  alt="Image 1"
+                  style={imageStylecal}
+                />
+              </div>
+              <div>
+                <img
+                  src="/images/arigasaki.jpg"
+                  alt="Image 2"
+                  style={imageStylecal}
+                />
+              </div>
+              <div>
+                <img
+                  src="/images/arigasaki.jpg"
+                  alt="Image 3"
+                  style={imageStylecal}
+                />
+              </div>
+              <div>
+                <img
+                  src="/images/arigasaki.jpg"
+                  alt="Image 4"
+                  style={imageStylecal}
+                />
+              </div>
+              <div>
+                <img
+                  src="/images/arigasaki.jpg"
+                  alt="Image 5"
+                  style={imageStylecal}
+                />
+              </div>
+            </Carousel>
             <h1 style={h1Stylemobile}>会場地図・駐車場案内</h1>
             <h1 style={h1Stylemobile}>問い合わせ</h1>
             <p style={textmobile}>

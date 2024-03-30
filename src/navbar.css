@@ -3,9 +3,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(211, 211, 211, 0.75); /* 背景色と透過率を調整 */
+  background-color: rgba(211, 211, 211, 0.75);
   padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影を追加 */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 .navLinks {
