@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import useMedia from "use-media";
 
 function HomePage() {
@@ -56,6 +56,12 @@ function HomePage() {
     textAlign: "center",
     width: "300px", // コンテナの幅と高さを固定
     height: "300px", // コンテナの高さを指定
+  };
+
+  const itemMobileStyle: React.CSSProperties = {
+    textAlign: "center",
+    width: "100px", // コンテナの幅と高さを固定
+    height: "100px", // コンテナの高さを指定
   };
 
   const imageStyle: React.CSSProperties = {
@@ -126,39 +132,6 @@ function HomePage() {
     marginRight: "1vw",
   };
 
-  const circleStyle: React.CSSProperties = {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    width: "15vw",
-    height: "15vw",
-    borderRadius: "50%",
-    backgroundColor: "white",
-    color: "rgb(234, 96, 142)",
-    fontSize: "20px",
-    textAlign: "center",
-    lineHeight: "30px",
-    alignSelf: "flex-end",
-    top: "90%",
-    right: "15%",
-  };
-  const circleStylemobile: React.CSSProperties = {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    width: "20vw",
-    height: "20vw",
-    borderRadius: "50%",
-    backgroundColor: "white",
-    color: "rgb(234, 96, 142)",
-    fontSize: "20px",
-    textAlign: "center",
-    lineHeight: "30px",
-    alignSelf: "flex-end",
-    top: "105%",
-    right: "22%",
-  };
-
   const h1Style: React.CSSProperties = {
     textAlign: "left",
     color: "white",
@@ -172,40 +145,6 @@ function HomePage() {
     color: "white",
     marginLeft: "10%",
     fontSize: `6Vw`,
-    boxSizing: "border-box",
-  };
-
-  const h2Stylemobile: React.CSSProperties = {
-    textAlign: "left",
-    color: "white",
-    marginLeft: "10%",
-    fontSize: `5Vw`,
-    boxSizing: "border-box",
-    fontWeight: "bold",
-  };
-
-  const h3Stylemobile: React.CSSProperties = {
-    textAlign: "left",
-    color: "white",
-    marginLeft: "10%",
-    fontSize: `4Vw`,
-    boxSizing: "border-box",
-    fontWeight: "bold",
-  };
-
-  const h2Style: React.CSSProperties = {
-    textAlign: "left",
-    color: "white",
-    marginLeft: "10%",
-    fontSize: `2.6Vw`,
-    boxSizing: "border-box",
-  };
-
-  const h3Style: React.CSSProperties = {
-    textAlign: "left",
-    color: "white",
-    marginLeft: "12%",
-    fontSize: `2.2Vw`,
     boxSizing: "border-box",
   };
 
@@ -237,59 +176,12 @@ function HomePage() {
     fontWeight: "bold",
   };
 
-  const chuuimobile: React.CSSProperties = {
-    textAlign: "left",
-    color: "white",
-    fontSize: `3.1vw`,
-    marginLeft: "12%",
-    boxSizing: "border-box",
-    fontWeight: "bold",
-  };
-
   const boxStyle: React.CSSProperties = {
     border: "2px solid white",
     display: "inline-block",
     marginLeft: "10%",
     marginRight: "10%",
-  };
-
-  const buttonContainerStyle: React.CSSProperties = {
-    display: "flex",
-    justifyContent: "space-between",
     width: "80%",
-    marginTop: "20px",
-    marginLeft: "10%",
-  };
-
-  const buttonContainerStylemobile: React.CSSProperties = {
-    display: "flex",
-    width: "81%",
-    marginLeft: "10%",
-    flexDirection: "column",
-    alignItems: "center",
-  };
-
-  const buttonStyle: React.CSSProperties = {
-    width: "49%",
-    padding: "10px 20px",
-    backgroundColor: "white",
-    color: "rgb(234, 96, 142)",
-    cursor: "pointer",
-    fontSize: "1.5vw",
-    border: "solid",
-    borderColor: "white",
-  };
-
-  const buttonStylemobile: React.CSSProperties = {
-    width: "100%",
-    padding: "10px 20px",
-    backgroundColor: "white",
-    color: "rgb(234, 96, 142)",
-    cursor: "pointer",
-    fontSize: "4vw",
-    border: "solid",
-    borderColor: "white",
-    marginBottom: "8px",
   };
 
   const fotterImageStyle: React.CSSProperties = {
@@ -301,52 +193,6 @@ function HomePage() {
     width: "20%",
     marginLeft: "75%",
   };
-
-  const modalStyle: React.CSSProperties = {
-    position: "fixed", // 'fixed' は文字列リテラル型
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.8)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    zIndex: 1000,
-  };
-
-  const closeButtonStyle: React.CSSProperties = {
-    position: "absolute", // 'absolute' は文字列リテラル型
-    top: "10px",
-    right: "25px",
-    color: "white",
-    fontSize: "35px",
-    fontWeight: "bold",
-    cursor: "pointer",
-  };
-
-  const enlargedImageStyle = {
-    maxWidth: "80%",
-    maxHeight: "80%",
-  };
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  const openModal = (imageSrc: string) => {
-    setSelectedImage(imageSrc);
-  };
-
-  const closeModal = () => {
-    setSelectedImage(null);
-  };
-
-  const openInNewTab = (url: string | URL | undefined) => {
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
-
-  const formUrl =
-    "https://docs.google.com/forms/d/e/1FAIpQLScqbm34ZDuVnjKSP6fzLf7EEGEyw8vITzL9xqX4PQ2zjMqMGA/viewform?fbclid=IwAR3Aarlz1ZCSGUKl9nhoSRGM5DCVaXL7IdMP4DwAhyqPNIcr-8M8qfhYem0";
-
-  const tanpenUrl = "https://filmfreeway.com/ObuseKeidaiArt";
 
   return (
     <React.Fragment>
@@ -409,6 +255,7 @@ function HomePage() {
             />
           )}
         </div>
+        <div style={{ height: "60px" }}></div>
         {isWide ? (
           <>
             <h1 style={h1Style}>ゲストアーティスト</h1>
@@ -416,32 +263,51 @@ function HomePage() {
               <div style={itemStyle}>
                 <img
                   src="/images/arigasaki.jpg"
-                  alt="説明1"
+                  alt="蟻ヶ崎高校　書道部"
                   style={imageStyle}
                 />
-                <p style={textGest}>画像1の説明文</p>
+                <p style={textGest}>蟻ヶ崎高校　書道部</p>
               </div>
 
               {/* 画像2 */}
               <div style={itemStyle}>
                 <img
                   src="/images/sabunyuma.jpg"
-                  alt="説明2"
+                  alt="サブニュマ"
                   style={imageStyle}
                 />
-                <p style={textGest}>画像2の説明文</p>
+                <p style={textGest}>サブニュマ</p>
               </div>
+              <div style={{ height: "30px" }}></div>
             </div>
           </>
         ) : (
-          <div style={{ ...circleStylemobile, ...additionalImageStyle }}>
-            <p style={{ fontSize: "10px", lineHeight: "1.2" }}>
-              ゲスト
-              <br />
-              comming soon
-            </p>
-          </div>
+          <>
+            <div style={{ height: "30px" }}></div>
+            <h1 style={h1Style}>ゲストアーティスト</h1>
+            <div style={galleryStyle}>
+              <div style={itemMobileStyle}>
+                <img
+                  src="/images/arigasaki.jpg"
+                  alt="蟻ヶ崎高校　書道部"
+                  style={imageStyle}
+                />
+                <p style={textGest}>蟻ヶ崎高校　書道部</p>
+              </div>
+
+              {/* 画像2 */}
+              <div style={itemMobileStyle}>
+                <img
+                  src="/images/sabunyuma.jpg"
+                  alt="サブニュマ"
+                  style={imageStyle}
+                />
+                <p style={textGest}>サブニュマ</p>
+              </div>
+            </div>
+          </>
         )}
+
         {isWide ? (
           <div style={{ marginTop: "5%" }}>
             <p style={textStyle}>
@@ -494,6 +360,23 @@ function HomePage() {
               </p>
             </div>
 
+            <h1 style={h1Style}>タイムテーブル</h1>
+            <div style={boxStyle}>
+              <p style={textGaiyo}>10:00 開場</p>
+              <p style={textGaiyo}>11:00-11:30 サブニュマ</p>
+              <p style={textGaiyo}>12:00-13:15 短編映画①</p>
+              <p style={textGaiyo}>13:30-14:20 蟻ヶ崎高校　書道部</p>
+              <p style={textGaiyo}>14:30-15:45 短編映画②</p>
+              <p style={textGaiyo}>11:00-11:30 サブニュマ</p>
+              <p style={textGaiyo}>14:30-15:10 大般若法要</p>
+              <p style={textGaiyo}>
+                -15:30 サブニュマ練り歩き、15:30 に本堂前でフィナーレ
+              </p>
+              <p style={textGaiyo}>16:00 終了</p>
+            </div>
+
+            <h1 style={h1Style}>会場地図・駐車場案内</h1>
+
             <h1 style={h1Style}>問い合わせ</h1>
             <p style={textStyle}>
               {" "}
@@ -507,7 +390,7 @@ function HomePage() {
             />
           </div>
         ) : (
-          <div style={{ marginTop: "22vw" }}>
+          <div style={{ marginTop: "15vw" }}>
             <p style={textmobile}>
               <br />
               桜吹雪に誘われてたどりつくのは、
@@ -581,6 +464,22 @@ function HomePage() {
                 小布施文化観光協会、小布施町商工会、大島自治会
               </p>
             </div>
+            <h1 style={h1Stylemobile}>タイムテーブル</h1>
+            <div style={boxStyle}>
+              <p style={textboxmobile}>10:00 開場</p>
+              <p style={textboxmobile}>11:00-11:30 サブニュマ</p>
+              <p style={textboxmobile}>12:00-13:15 短編映画①</p>
+              <p style={textboxmobile}>13:30-14:20 蟻ヶ崎高校　書道部</p>
+              <p style={textboxmobile}>14:30-15:45 短編映画②</p>
+              <p style={textboxmobile}>11:00-11:30 サブニュマ</p>
+              <p style={textboxmobile}>14:30-15:10 大般若法要</p>
+              <p style={textboxmobile}>
+                -15:30 サブニュマ練り歩き、15:30 に本堂前でフィナーレ
+              </p>
+              <p style={textboxmobile}>16:00 終了</p>
+            </div>
+
+            <h1 style={h1Stylemobile}>会場地図・駐車場案内</h1>
             <h1 style={h1Stylemobile}>問い合わせ</h1>
             <p style={textmobile}>
               ご不明点等がある場合は、
