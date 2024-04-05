@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import useMedia from "use-media";
@@ -10,6 +10,16 @@ function HomePage() {
     fontFamily: "MidashiGoPr5 MB31-83pv-RKSJ-H*",
   };
   const isWide = useMedia({ minWidth: "768px" });
+
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const openModal = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
 
   const imageContainerStyle: React.CSSProperties = {
     position: "relative",
@@ -28,10 +38,19 @@ function HomePage() {
   const textGest: React.CSSProperties = {
     textAlign: "center",
     color: "white",
-    fontSize: `2vw`,
+    fontSize: `2.3vw`,
     fontWeight: "bold",
     // marginTop: '5%',
-    marginLeft: "10%",
+    lineHeight: "1.8",
+    marginBottom: `0px`,
+  };
+
+  const textGestmobile: React.CSSProperties = {
+    textAlign: "center",
+    color: "white",
+    fontSize: `3.6vw`,
+    fontWeight: "bold",
+    // marginTop: '5%',
     lineHeight: "1.8",
     marginBottom: `0px`,
   };
@@ -49,26 +68,26 @@ function HomePage() {
 
   const galleryStyle: React.CSSProperties = {
     display: "flex",
-    justifyContent: "space-around",
+    justifyContent: "space-evenly",
     alignItems: "flex-start",
     margin: "20px",
   };
 
   const itemStyle: React.CSSProperties = {
     textAlign: "center",
-    width: "300px", // コンテナの幅と高さを固定
-    height: "300px", // コンテナの高さを指定
+    width: "50%", // コンテナの幅と高さを固定
+    height: "auto", // コンテナの高さを指定
   };
 
   const itemMobileStyle: React.CSSProperties = {
     textAlign: "center",
-    width: "100px", // コンテナの幅と高さを固定
-    height: "100px", // コンテナの高さを指定
+    width: "50%", // コンテナの幅と高さを固定
+    height: "auto", // コンテナの高さを指定
   };
 
   const imageStyle: React.CSSProperties = {
-    width: "100%",
-    height: "100%",
+    width: "80%",
+    height: "auto",
     borderRadius: "50%",
     objectFit: "cover",
   };
@@ -197,17 +216,28 @@ function HomePage() {
   };
 
   const imageStylecal: React.CSSProperties = {
-    width: "40%", // 画像の幅を250pxに設定
+    width: "80%", // 画像の幅を250pxに設定
     height: "auto", // 画像の高さを250pxに設定
     borderRadius: "20px", // 画像の角を20pxの半径で丸くする
     objectFit: "cover", // 画像のアスペクト比を保ちつつ、コンテナに合わせてサイズを調整
+    textAlign: "center",
   };
 
-  const images = [
-    "/images/arigasaki.jpg",
-    "/images/sabunyuma.jpg",
-    // 他の画像パスを追加
-  ];
+  const imageStylecalmobile: React.CSSProperties = {
+    width: "60%", // 画像の幅を250pxに設定
+    height: "auto", // 画像の高さを250pxに設定
+    borderRadius: "20px", // 画像の角を20pxの半径で丸くする
+    objectFit: "cover", // 画像のアスペクト比を保ちつつ、コンテナに合わせてサイズを調整
+    textAlign: "center",
+  };
+
+  const carouselItemStyle: React.CSSProperties = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center", // 画像を垂直方向にも中央揃えにする
+    width: "100%", // コンテナの幅を全体に
+    height: "auto", // 必要に応じて設定
+  };
 
   const responsive = {
     superLargeDesktop: {
@@ -227,6 +257,35 @@ function HomePage() {
       breakpoint: { max: 464, min: 0 },
       items: 1,
     },
+  };
+
+  const modalStyle: React.CSSProperties = {
+    position: "fixed", // 'fixed' は文字列リテラル型
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(0, 0, 0, 0.8)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 1000,
+  };
+
+  const closeButtonStyle: React.CSSProperties = {
+    position: "absolute", // 'absolute' は文字列リテラル型
+    top: "10px",
+    right: "25px",
+    color: "white",
+    fontSize: "35px",
+    fontWeight: "bold",
+    cursor: "pointer",
+  };
+
+  const enlargedImageStyle = {
+    maxWidth: "80%",
+    maxHeight: "80%",
+    backgroundColor: "white",
   };
 
   return (
@@ -327,7 +386,7 @@ function HomePage() {
                   alt="蟻ヶ崎高校　書道部"
                   style={imageStyle}
                 />
-                <p style={textGest}>蟻ヶ崎高校　書道部</p>
+                <p style={textGestmobile}>蟻ヶ崎高校　書道部</p>
               </div>
 
               {/* 画像2 */}
@@ -337,7 +396,7 @@ function HomePage() {
                   alt="サブニュマ"
                   style={imageStyle}
                 />
-                <p style={textGest}>サブニュマ</p>
+                <p style={textGestmobile}>サブニュマ</p>
               </div>
             </div>
           </>
@@ -411,58 +470,62 @@ function HomePage() {
             </div>
 
             <h1 style={h1Style}>会場地図・駐車場案内</h1>
-            {/* <Carousel
-              autoPlay
-              infiniteLoop
-              showThumbs={false}
-              showStatus={false}
-              interval={3000} // 3秒ごとにスライドを切り替え
-            >
-              {images.map((image, index) => (
-                <div
-                  key={index}
-                  style={{ display: "flex", justifyContent: "center" }}
-                >
-                  {" "}
-                  {/* 画像を中央に配置 */}
-            {/* <img
-                    src={image}
-                    alt={`Slide ${index + 1}`}
-                    style={imageStylecal}
+            <div style={imageContainerStyle}>
+              <img
+                src="/images/kaizyo.png"
+                alt="area Pic"
+                style={{
+                  width: "40%",
+                  height: "80%",
+                  backgroundColor: "white",
+                }}
+                onClick={() => openModal("/images/kaizyo.png")}
+              />
+
+              {selectedImage && (
+                <div style={modalStyle}>
+                  <span style={closeButtonStyle} onClick={closeModal}>
+                    &times;
+                  </span>
+                  <img
+                    src={selectedImage}
+                    alt="Enlarged pic"
+                    style={enlargedImageStyle}
                   />
                 </div>
-              ))} */}
-            {/* </Carousel> */}
+              )}
+            </div>
+            <h1 style={h1Style}>昨年の様子</h1>
             <Carousel responsive={responsive}>
-              <div>
+              <div style={carouselItemStyle}>
                 <img
                   src="/images/arigasaki.jpg"
                   alt="Image 1"
                   style={imageStylecal}
                 />
               </div>
-              <div>
+              <div style={carouselItemStyle}>
                 <img
                   src="/images/arigasaki.jpg"
                   alt="Image 2"
                   style={imageStylecal}
                 />
               </div>
-              <div>
+              <div style={carouselItemStyle}>
                 <img
                   src="/images/arigasaki.jpg"
                   alt="Image 3"
                   style={imageStylecal}
                 />
               </div>
-              <div>
+              <div style={carouselItemStyle}>
                 <img
                   src="/images/arigasaki.jpg"
                   alt="Image 4"
                   style={imageStylecal}
                 />
               </div>
-              <div>
+              <div style={carouselItemStyle}>
                 <img
                   src="/images/arigasaki.jpg"
                   alt="Image 5"
@@ -484,7 +547,7 @@ function HomePage() {
             />
           </div>
         ) : (
-          <div style={{ marginTop: "15vw" }}>
+          <div style={{ marginTop: "4vw" }}>
             <p style={textmobile}>
               <br />
               桜吹雪に誘われてたどりつくのは、
@@ -572,44 +635,70 @@ function HomePage() {
               </p>
               <p style={textboxmobile}>16:00 終了</p>
             </div>
+            <h1 style={h1Stylemobile}>会場地図・駐車場案内</h1>
+            <div style={imageContainerStyle}>
+              <img
+                src="/images/kaizyo.png"
+                alt="area Pic"
+                style={{
+                  width: "40%",
+                  height: "80%",
+                  backgroundColor: "white",
+                }}
+                onClick={() => openModal("/images/kaizyo.png")}
+              />
+
+              {selectedImage && (
+                <div style={modalStyle}>
+                  <span style={closeButtonStyle} onClick={closeModal}>
+                    &times;
+                  </span>
+                  <img
+                    src={selectedImage}
+                    alt="Enlarged pic"
+                    style={enlargedImageStyle}
+                  />
+                </div>
+              )}
+            </div>
+            <h1 style={h1Stylemobile}>昨年の様子</h1>
             <Carousel responsive={responsive}>
-              <div>
+              <div style={carouselItemStyle}>
                 <img
                   src="/images/arigasaki.jpg"
                   alt="Image 1"
-                  style={imageStylecal}
+                  style={imageStylecalmobile}
                 />
               </div>
-              <div>
+              <div style={carouselItemStyle}>
                 <img
                   src="/images/arigasaki.jpg"
                   alt="Image 2"
-                  style={imageStylecal}
+                  style={imageStylecalmobile}
                 />
               </div>
-              <div>
+              <div style={carouselItemStyle}>
                 <img
                   src="/images/arigasaki.jpg"
                   alt="Image 3"
-                  style={imageStylecal}
+                  style={imageStylecalmobile}
                 />
               </div>
-              <div>
+              <div style={carouselItemStyle}>
                 <img
                   src="/images/arigasaki.jpg"
                   alt="Image 4"
-                  style={imageStylecal}
+                  style={imageStylecalmobile}
                 />
               </div>
-              <div>
+              <div style={carouselItemStyle}>
                 <img
                   src="/images/arigasaki.jpg"
                   alt="Image 5"
-                  style={imageStylecal}
+                  style={imageStylecalmobile}
                 />
               </div>
             </Carousel>
-            <h1 style={h1Stylemobile}>会場地図・駐車場案内</h1>
             <h1 style={h1Stylemobile}>問い合わせ</h1>
             <p style={textmobile}>
               ご不明点等がある場合は、

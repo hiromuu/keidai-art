@@ -272,10 +272,14 @@ function App() {
                 onClick={() => openModal("/images/bosyuu.png")}
               />
               <img
-                src="/images/area.jpg"
+                src="/images/kaizyo.png"
                 alt="area Pic"
-                style={{ width: "40%", height: "80%" }}
-                onClick={() => openModal("/images/area.jpg")}
+                style={{
+                  width: "40%",
+                  height: "80%",
+                  backgroundColor: "white",
+                }}
+                onClick={() => openModal("/images/kaizyo.png")}
               />
 
               {selectedImage && (
@@ -404,10 +408,14 @@ function App() {
                 onClick={() => openModal("/images/bosyuu.png")}
               />
               <img
-                src="/images/area.jpg"
+                src="/images/kaizyo.png"
                 alt="area Pic"
-                style={{ width: "50%", height: "80%" }}
-                onClick={() => openModal("/images/area.jpg")}
+                style={{
+                  width: "50%",
+                  height: "80%",
+                  backgroundColor: "white",
+                }}
+                onClick={() => openModal("/images/kaizyo.png")}
               />
 
               {selectedImage && (
