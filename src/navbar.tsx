@@ -29,6 +29,14 @@ function Navbar() {
     color: "white",
   };
 
+  const eventNameStyleombile: React.CSSProperties = {
+    marginLeft: "10px",
+    fontSize: "20px",
+    fontFamily: "'MidashiGoPr5 MB31-83pv-RKSJ-H*', sans-serif",
+    fontWeight: "bold",
+    color: "white",
+  };
+
   const socialIconsStyle: React.CSSProperties = {
     display: "flex",
     alignItems: "center",
@@ -66,9 +74,9 @@ function Navbar() {
             </a>
             {/* イベント名 */}
             {isWide ? (
-              <span style={eventNameStyle}>境内アート×苗市</span>
+              <span style={eventNameStyle}>境内アート×苗市2024</span>
             ) : (
-              <div></div>
+              <span style={eventNameStyleombile}>境内アート×苗市</span>
             )}
           </div>
           {isWide ? (

@@ -217,15 +217,17 @@ function HomePage() {
 
   const imageStylecal: React.CSSProperties = {
     width: "80%", // 画像の幅を250pxに設定
-    height: "auto", // 画像の高さを250pxに設定
+    height: "300px",
     borderRadius: "20px", // 画像の角を20pxの半径で丸くする
     objectFit: "cover", // 画像のアスペクト比を保ちつつ、コンテナに合わせてサイズを調整
     textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
   };
 
   const imageStylecalmobile: React.CSSProperties = {
     width: "60%", // 画像の幅を250pxに設定
-    height: "auto", // 画像の高さを250pxに設定
+    height: "200px", // 画像の高さを250pxに設定
     borderRadius: "20px", // 画像の角を20pxの半径で丸くする
     objectFit: "cover", // 画像のアスペクト比を保ちつつ、コンテナに合わせてサイズを調整
     textAlign: "center",
@@ -499,36 +501,43 @@ function HomePage() {
             <Carousel responsive={responsive}>
               <div style={carouselItemStyle}>
                 <img
-                  src="/images/arigasaki.jpg"
+                  src="/images/keidai1.jpg"
                   alt="Image 1"
                   style={imageStylecal}
                 />
               </div>
               <div style={carouselItemStyle}>
                 <img
-                  src="/images/arigasaki.jpg"
+                  src="/images/keidai2.jpg"
                   alt="Image 2"
                   style={imageStylecal}
                 />
               </div>
               <div style={carouselItemStyle}>
                 <img
-                  src="/images/arigasaki.jpg"
+                  src="/images/keidai3.jpg"
                   alt="Image 3"
                   style={imageStylecal}
                 />
               </div>
               <div style={carouselItemStyle}>
                 <img
-                  src="/images/arigasaki.jpg"
+                  src="/images/keidai4.jpg"
                   alt="Image 4"
                   style={imageStylecal}
                 />
               </div>
               <div style={carouselItemStyle}>
                 <img
-                  src="/images/arigasaki.jpg"
+                  src="/images/keidai5.jpg"
                   alt="Image 5"
+                  style={imageStylecal}
+                />
+              </div>
+              <div style={carouselItemStyle}>
+                <img
+                  src="/images/keidai6.jpg"
+                  alt="Image 6"
                   style={imageStylecal}
                 />
               </div>
@@ -665,36 +674,43 @@ function HomePage() {
             <Carousel responsive={responsive}>
               <div style={carouselItemStyle}>
                 <img
-                  src="/images/arigasaki.jpg"
+                  src="/images/keidai1.jpg"
                   alt="Image 1"
                   style={imageStylecalmobile}
                 />
               </div>
               <div style={carouselItemStyle}>
                 <img
-                  src="/images/arigasaki.jpg"
+                  src="/images/keidai2.jpg"
                   alt="Image 2"
                   style={imageStylecalmobile}
                 />
               </div>
               <div style={carouselItemStyle}>
                 <img
-                  src="/images/arigasaki.jpg"
+                  src="/images/keidai3.jpg"
                   alt="Image 3"
                   style={imageStylecalmobile}
                 />
               </div>
               <div style={carouselItemStyle}>
                 <img
-                  src="/images/arigasaki.jpg"
+                  src="/images/keidai4.jpg"
                   alt="Image 4"
                   style={imageStylecalmobile}
                 />
               </div>
               <div style={carouselItemStyle}>
                 <img
-                  src="/images/arigasaki.jpg"
+                  src="/images/keidai5.jpg"
                   alt="Image 5"
+                  style={imageStylecalmobile}
+                />
+              </div>
+              <div style={carouselItemStyle}>
+                <img
+                  src="/images/keidai6.jpg"
+                  alt="Image 6"
                   style={imageStylecalmobile}
                 />
               </div>

@@ -206,6 +206,7 @@ function App() {
   const enlargedImageStyle = {
     maxWidth: "80%",
     maxHeight: "80%",
+    backgroundColor: "white",
   };
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
